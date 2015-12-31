@@ -1,0 +1,91 @@
+                        Chapter 1  Linear Equations
+
+1.1 Introduction to linear systems
+
+
+System of linear equations:
+|  x + 2y + 3z = 39 |
+|  x + 3y + 2z = 34 |
+| 3x + 2y +  z = 26 |
+
+The form of solution:
+| x     = ? |
+|   y   = ? |
+|     z = ? | 
+
+1.Eliminate the terms that are off the diagonal.
+2.Make the coefficients along the diagonal equal to 1.
+
+
+Method:
+1.Eliminate the variable x from the second and third equation by subtracing
+  the first equation.
+2.Eliminate the variable y from the third equation by subtracing the second
+  equation.
+3.Get variable z in third equation, then y in second, x in first.
+4.Check the result is indeed the solution of the system by calculate every
+  equation.
+
+
+Geometric interpretation
+The planes defined by the three equations intersect at one point.
+
+
+A system of linear equations may has:
+1.a unique solution
+2.infinitely many solutions
+  | x   -  z = 2  |
+  |   y + 2z = -1 |
+  |        0 = 0  |
+3.no solutions
+  | x   -  z = 2  |
+  |   y + 2z = -1 |
+  |        0 = -6 |
+
+
+Problem
+1.It's easy to check our result when the system has a unique solution or
+  infinitely many solutions. How can we check there is indeed no solutions
+  in the linear system.
+
+
+Exercises 1.1
+
+19.two-commodity market
+P1 P2 : the unit prices of the products
+D1 D2 : the quantities demanded
+S1 S2 : the quantities supplied
+
+D1 = 70 - 2P1 + P2, S1 = -14 + 3P1;
+D2 = 105 + P1 - P2, S2 = -7 + 2P2.
+
+the higher of the price, the less of demand, the more of supply
+see D1 and D2. the less of P1, the more of D1 and less of D2. the same with
+P2. So the two commodities are compete relationship.
+
+D1 = S1   5P1 -  P2 = 84      P1 = 26
+D2 = S2   P1  - 3P2 = -112    P2 = 46
+
+20.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
