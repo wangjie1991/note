@@ -1,0 +1,50 @@
+                        Chapter 1  Linear Equations
+
+1.3 On the solutions of linear systems: Matrix Algebra
+
+Topic:
+1.  The number of solutions of a linear system
+2.  Definitions and rules of matrix algebra
+
+A system is inconsistant, then it has no solutions.
+A system is consistant, then it has either
+. infinitely many solutions(at least one free variable) or
+. exactly one solution(all the variables are leading).
+
+The rank of a matrix A is the number of leading l’s in rref(A).
+The rank of a linear system must specify whether the coefficient matrix or the augmented matrix of the system.
+
+A system of n linear equations in m variables. The coefficient matrix A has the size n*m. Then:
+a.  The inequalities rank(A) <= n and rank(A) <= m hold.
+b.  If rank(A) = n, then the system is consistent.
+c.  If rank(A) = m, then the system has at most one solution.
+    number(free variables) = m - rank(A)
+d.  If rank(A) < m, then the system has either infinitely many solutions,
+    or none.
+
+For a linear system with fewer equations than variables:
+n < m and rank(A) <= n, so rank(A) < m, match for condition d.
+
+For a linear system of n equations in n variables:
+1.  rank(A) < n, match for condition d.
+2.  rank(A) = n, match for condition b and c. A unique solution.
+
+
+Matrix Algebra
+1.  sums of matrices
+2.  scalar multiples of matrices
+3.  dot product of vectors
+4.  the product Ax
+5.  the product Ax in terms of the columns of A
+6.  linear combinations
+
+Algebra rules for Ax
+If A is an n*m matrix, x and y are vectors in R[m], and k is a scalar, then:
+a.  A(x + y) = Ax + Ay
+b.  A(kx) = k(Ax)
+
+Matrix form of a linear system
+Ax = b    &&    [A | b]
+
+
+
