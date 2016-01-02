@@ -1,0 +1,52 @@
+                  Chapter 2  Linear Transformation
+
+2.2 Linear Transformations in Geometry
+
+Geometrical Transformations
+[ a[11] a[12] a[21] a[22] ] [ x y ] = [ a[11]x+a[12]y a[21]x+a[22]y ]
+
+
+1.Scalings
+The matrix A=[ [k 0] [0 k] ] defines a scaling by k.
+Ax = [ [k 0] [0 k] ] [ x[1] x[2] ] = [ kx[1] kx[2] ] = k [ x[1] x[2] ] = kx
+1) k > 1, a dilation (or enlargement).
+2) 0 < k < 1, a contraction (or shrinking).
+3) k = 0, contract to a point.
+4) -1 < k < 0, a contraction in the oppositive direction.
+5) k < -1, a dilation in the oppositive direction.
+
+
+2.Orthogonal Projections
+
+L is a line in the plane, running through the origin.
+L| is the line through the origin perpendicular to L.
+x is Any vector in R[2] and is written uniquely as x = x_ + x|.
+x_ is parallel to line L, x| is perpendicular to L.
+w is a nonzero vector parallel to L.
+
+The transformation T(x)=x_ from R2 to R2 is called orthogonal projection of x onto L, and is denoted by proj[L](x) = x_.
+x| is parallel to L|. It's the orthogonal projection of x onto L|.
+
+x_=kw, x|=x-x_=x-kw, x| . w = (x-kw).w = 0, so
+proj[L](x) = x_ = kw = (x.w/w.w)w
+if w is a unit vector u, then
+proj[L](x) = (x.u)u = [ [u1*u1 u1*u2] [u1*u2 u2*u2] ] [x[1] x[2]]
+           = 1/(w1*w1+w2*w2) [ [w1*w1 w1*w2] [w1*w2 w2*w2] ] [x[1] x[2]]
+
+
+3.Reflection
+
+L is a line in the plane, running through the origin.
+x is Any vector in R[2] and is written uniquely as x = x_ + x|.
+The reflection of x is obtained by flipping vector x over the line L.
+
+The linear transformation T(x) = x_ - x| is called the reflection of x about L, denoted by ref[L](x).
+
+ref[L](x) = x_ - x| = x - 2x| = 2x_ - x = 2proj[L](x) - x = 2(x.u)u - x.
+          = [ [u1**2-u2**2 2*u1*u2] [2*u1*u2 u2**2-u1**2] ] [x[1] x[2]]
+          = [ [a b] [b -a] ] [x[1] x[2]] (a**2 + b**2 = 1)
+
+
+4.Orthogonal Projections and Reflections in Space
+
+

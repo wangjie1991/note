@@ -22,12 +22,26 @@ A first-order function with a constant term is called linear.
 The coefficient matrix of the identity transformation is called the
 identity matrix and is denoted by I[n], such as rref(A).
 
-A linear transformation T(x)=Ax from R[m] to R[n]
+
+A linear transformation T(x)=Ax from R[m] to R[n], then:
 1.the transform of the sum of two vectors equals the sum of the transforms.
-  T(v+w) = A(v+w) = Av + Aw = T(v) + T(w)
 2.the transform of a scalar multiple 
-  T(kv) = A(kv) = kAv = kT(v)
 
+proof:
+T(v+w) = A(v+w) = Av + Aw = T(v) + T(w)
+T(kv) = A(kv) = kAv = kT(v)
 
+A transformation T from R[m] to R[n] is linear if (and only if):
+1.T(v+w) = T(v) + T(w), for all vectors v and w in R[m].
+2.T(kv) = kT(v), for all vectors v in R[m] and all scalars k.
+
+proof:
+To show there exists a matrix A such that T(x)=Ax, for all x in the vector
+space R[m].
+Let e[1],...,e[m] be the standard vectors, x = x[1]e[1] + ... + x[m]e[m].
+T(x) = T(x[1]e[1] + ... + x[m]e[m]) = T(x[1]e[1]) + ... + T(x[m]e[m]) (1)
+     = x[1]T(e[1]) + ... + x[m]T(e[m]) (2)
+     = [ T(e[1]) ... T(e[m]) ] [ x[1] ... x[m] ]
+     = Ax
 
 
