@@ -48,5 +48,35 @@ ref[L](x) = x_ - x| = x - 2x| = 2x_ - x = 2proj[L](x) - x = 2(x.u)u - x.
 
 
 4.Orthogonal Projections and Reflections in Space
+Consider orthogonal projections and reflections in multiple dimension space.
+
+L is a line in the space(three dimentions), running through the origin.
+x is Any vector in R[3] and is written uniquely as x = x_ + x|.
+L|=V is the plane through the origin perpendicular to L.
+
+proj[L](x) = x_ = (x.u)u
+proj[V](x) = x - proj[L](x) = x - (x.u)u
+ref[L](x) = proj[L](x) - proj[V](x) = 2(x.u)u - x
+ref[V](x) = proj[V](x) - proj[L](x) = -ref[L](x) = x - 2(x.u)u
+
+
+5.Rotations
+
+The linear transformation T from R[2] to R[2] rotates any vector x through a fixed angle θ in the counterclockwise direction.
+x is Any vector [x[1] x[2]], y is obtained by rotating x through π/2, namely [-x[2] x[1]].
+
+T(x) = (cosθ)x + (sinθ)y = [[cosθ sinθ] [-sinθ cosθ]]x = [[a b] [-b a]]x
+(a**2 + b**2 = 1)
+
+
+6.Rotations Combined with a Scaling
+
+Matrix [[a b] [-b a]] represents a rotation combined with a scaling.
+Vector [a b] is [rcosθ rsinθ] in the polar coordination, then [[a b] [-b a]]
+represents a rotation through θ combined with a scaling by r.
+
+7.Shears
+vertical shear T(x)=[[1 k] [0 1]]x
+horizontal shear T(x)=[[1 0] [k 1]]x
 
 

@@ -1,0 +1,53 @@
+                  Chapter 2  Linear Transformation
+
+2.3 Matrix Products
+
+Consider the position coding example in the previous chapters, encoding and
+decoding is a linear transformation. Now the position data need to be
+encoded twice, y=Ax, z=By. So the transformation from x to z is linear or
+not?
+Proof:
+T(v+w) = B(A(v+w)) = B(Av + Aw) = B(Av) + B(Aw) = T(v) + T(w)
+T(kv) = B(A(kv)) = B(k(Av)) = k(B(Av)) = kT(v)
+
+
+Matrix multiplication
+
+B is an n*p matrix and A is a q*m matrix.
+1.The product BA is defined if and only if p = q.
+  The target space of B must be the same with the domain of A.
+2.The product BA is defined as the matrix of the linear transformation
+  T(x) = B(Ax) = (BA)x.
+
+[i]th column of BA = (BA)e[i] = B(Ae[i]) = B([i]th column of A).
+If A = [v[1] ... v[m]], then BA = [Bv[1] ... Bv[m]]
+
+
+Some matrix algebra
+
+1.Matrix multiplication is noncommutative
+
+2.Multiplying with the identity matrix
+  For an n*m matrix A, AI[m] = I[n]A = A.
+
+3.Matrix multiplication is associative
+  For an n*p matrix A, a p*q matrix B, and a q*m matrix C, (AB)C = A(BC).
+
+Proof1:
+C = [v[1] ... v[m]] and (AB)v[i] = A(Bv[i])             ==>
+(AB)C = [(AB)v[1] .. (AB)v[m]].                         ==> (AB)C = A(BC)
+A(BC) = A[Bv[1] ... Bv[m]] = [A(Bv[1]) ... A(Bv[m])].   ==>
+
+Proof2:
+T(x) = ((AB)C)x and L(x) = (A(BC))x     ==>
+T(x) = ((AB)C)x = (AB)(Cx) = A(B(Cx))   ==> (AB)C = A(BC)
+L(x) = (A(BC))x = A((BC)x) = A(B(Cx))   ==>
+
+4.Distributive property for matrices
+A and B are n*p matrices, C and D are p*m matrices, then
+      A(C+D) = AC + AD      (A+B)C = AC + BC
+
+5.A is an n*p matrix, B is a p*m matrix, and k is a scalar, then
+  (kA)B = A(kB) = k(AB)
+
+
