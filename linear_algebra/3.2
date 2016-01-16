@@ -1,0 +1,69 @@
+            Chapter 3  Subspaces of R[n] and Their Dimensions
+
+3.2 Subspaces of R[n]:Bases and Linear Independence
+
+Definition 3.2.1  Subspaces of R[n]
+A subset W of the vector space R[n] is a (linear) subspace of R[n]:
+1. W contains the zero vector in R[n].
+2. W is closed under addition:
+   If w[1] and w[2] are both in W, then so is w[1]+w[2].
+3. W is closed under scalar multiplication:
+   If w is in W and k is an arbitrary scalar, then kw is in W.
+
+Properties 2 and 3 mean W is closed under linear combinations:
+If vectors w[1]...w[m] are in W and k[1]...k[m] are scalars, then the linear
+combination k[1]w[1]+...+k[m]w[m] is in W.
+
+Theorem 3.2.2   Image and kernel are subspaces
+If T(x)=Ax is a linear transformation from R[m] to R[n], then
+1.ker(T)=ker(A) is a subspace of R[m].
+2.im(T)=im(A) is a subspace of R[n].
+
+The only subspaces of R[2] are R[2] itself, the lines through the origin,and the set {0}. 
+The only subspaces of R[3] are R[3] itself, the planes through the origin,the lines through the origin, and the set {0}.
+
+The plane V in R[3] is x[1]+2x[2]+3x[3]=0, then try to:
+1.Find a matrix A such that V = ker(A).
+2.Find a matrix B such that V = im(B).
+
+Any subspace V of R[n] can be the kernel or the image of a linear transformation? YES.
+
+Definition 3.2.3    Redundant vectors - Linear independence - Basis
+Vectors v[1]...v[m] in R[n].
+a. If v[i] is a linear combination of the preceding vectors v[1]...v[i-1] in the list v[1]...v[m], then it's redundant.
+b. The vectors v[1]...v[m] are called linearly independent if none of them is redundant. Otherwise, the vectors are called linearly dependent.
+c. If the vectors v[1]...v[m] span a subspace V of R[n] and are linearly independent, then the vectors form a basis of V.
+
+Theorem 3.2.5   Linear independence and zero components
+For vectors v[1]...v[m] in R[n]. If v[1] is nonzero, and if each of the 
+vectors v[i](i>=2) has a nonzero entry in a component where all the 
+preceding vectors v[1]...v[i] have a 0, then the vectors v[1]...v[m] are 
+linearly independent.
+
+Definition 3.2.6  Linear Relations
+For vectors v[1]...v[m] in R[n]. The equation c[1]v[1]+...+c[m]v[m]=0 is called a (linear) relation among the vectors v[1]...v[m].
+There is always a trivial relation, with c[1]=...=c[m]=0.
+Nontrivial relations (where at least one coefficient c[i] is nonzero) may or may not exist among the vectors v[1]...v[m].
+
+Theorem 3.2.7   Relations and linear dependence
+The vectors v[1]...v[m] in R[n] are linearly dependent if (and only if) there are nontrivial relations among them.
+
+Theorem 3.2.8   Kernel and relations
+The vectors in the kernel of an n*m matrix A correspond to the linear relations among the column vectors v[1]...v[m] of A:
+  Ax = 0  <==>  x[1]v[1] + ... + x[m]v[m] = 0.
+In particular, the column vectors of A are linearly independent if (and only if) ker(A) = {0}, or rank(A) = m. This condition implies that m<=n.
+
+SUMMARY 3.2.9   Various characterizations of linear independence
+For vectors v[1]...v[m] in R[n], the following statements are equivalent:
+a. Vectors v[1]...v[m] are linearly independent.
+b. None of the vectors v[1]...v[m] is redundant.
+c. None of the vectors v[i] is a linear combination of the other vectors.
+d. There is only the trivial relation among the vectors.
+e. ker([v[1] v[2] ... v[m]]) = {0}.
+f. rank([v[1] v[2] ... v[m]]) = m.
+
+Theorem 3.2.10  Basis and unique representation
+The vectors v[1]...v[m] form a basis of a subspace V of R[n] if (and only if) every vector v in V can be expressed uniquely as a linear combination:
+                  v = c[1]v[1] + ... + c[m]v[m]
+
+
