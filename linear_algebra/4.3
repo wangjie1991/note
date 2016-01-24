@@ -1,0 +1,55 @@
+                    Chapter 4  Linear Spaces
+
+4.3 Matrix of a Linear Transformation
+
+Definition 4.3.1  The B-matrix of a linear transformation
+Consider a linear transformation T from V to V, where V is an n-dimensional 
+linear space. Let B be a basis of V. Consider the linear transformation 
+L[B], T, L[B]` from R[n] to R[n] with standard matrix B, meaning that 
+Bx = L[B](T(L[B]`(x))) for all x in R[n]. This matrix B is called the 
+B-matrix of transformation T. Letting f = L[B]`(x) and x = [f][B], we find
+that [T(f)][B] = B[f][B], for all f in V.
+    f   -----T-----> T(f)
+    |                |
+    L[B]             L[B]
+    |                |
+    [f][B]---B-----> [T(f)][B]
+
+B = (f1, f2, ...,fn), [T(fi)][B] = B[fi][B] = Be[i] = (ith column of B) ==>
+B = [ [T(f1)][B] ... [T(fn)][B] ]
+
+Definition 4.3.3  Change of basis matrix
+Consider two bases Π and Β of an n-dimensional linear space V. Consider the
+linear transformation L[Π] o L`[Β] from R[n] to R[n], with standard matrix 
+S, meaning that Sx = L[Π](L`[Β](x)) for all x in R[n]. This invertible 
+matrix S is called the change of basis matrix from Β to Π. Letting 
+f = L`[Β](x) and x = [f][B], we find that [f][Π] = S[f][Β], for all f in V.
+If Β = (b1, ..., bn), then [bi][Π] = S[bi][Β] = Se[i] = (ith column of S).
+
+S = [ [b1][Π] ... [bn][Π] ]
+
+Theorem 4.3.5 Change of basis for the matrix of a linear transformation
+Let V be a linear space with two given bases Π and Β. Consider a linear
+transformation T from V to V, and let A and B be the Π- and the Β-matrix
+of T. Let S be the change of basis matrix from Π to Β.
+  [T(f)][Π] = AS[f][B] = SB[f][B]
+Then A is similar to B and AS = SB or A = SBS` or B = S`AS.
+
+    x --------A--> Ax
+    ^              ^
+    |              |
+    S              S
+    |              |
+    [f][B] ---B--> [Ax][B]
+
+    [f][Π] ------ A ----------> [T(f)][Π]
+     ^  \                     /     ^
+     |  L[Π]                L[Π]    |
+     |     \                /       |
+     S      f --- T ---> T(f)       S
+     |     /                \       |
+     |  L[Β]                L[Β]    |
+     |  /                     \     |
+    [f][Β] ------ B ----------> [T(f)][Β]
+
+

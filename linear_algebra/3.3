@@ -3,7 +3,7 @@
 3.3 The Dimension of a Subspace of R[n]
 
 Theorem 3.3.1
-For vectors v[1]...v[p] and w[1]...w[q] in a subspace V of R[n], if v[1]...v[p] are linearly independent, and w[1]...w[q] span V , then p<=q.
+For vectors v[1]...v[p] and w[1]...w[q] in a subspace V of R[n], if v[1]...v[p] are linearly independent, and w[1]...w[q] span V, then p<=q.
 
 Proof:
 A=[ w[1] ... w[q] ], B=[ v[1] ... v[p] ], im(A)=V. The vector v[i] is in V, so v[i] is in the image of A. ==> v[i] = Au[i] ==> B=A[ u[1] ... u[p] ]=AC.
@@ -13,4 +13,47 @@ Theorem 3.3.2   Number of vectors in a basis
 All bases of a subspace V of R[n] consist of the same number of vectors.
 
 Proof:
+For two bases v[1]...v[p] and w[1]...w[q] of V.
+v[1]...v[p] are linearly independent and w[1]...w[q] span V, then p<=q.
+w[1]...w[q] are linearly independent and v[1]...v[p] span V, then q<=p.
+
+Definition 3.3.3  Dimension
+For a subspace V of R[n]. The number of vectors in a basis of V is called the dimension of V, denoted by dim(V).
+
+Theorem 3.3.4 Independent vectors and spanning vectors in a subspace of R[n]
+For a subspace V of R[n] with dim(V) = m.
+a. We can find at most m linearly independent vectors in V.
+b. We need at least m vectors to span V.
+c. If m vectors in V are linearly independent, then they form a basis of V.
+d. If m vectors in V span V, then they form a basis of V.
+
+kernel and image of a linear transformation are subspaces of the domain and the target space. ==> find bases of the image and kernel.
+
+Consider the matrix A:
+a. Find a basis of the kernel of A, and thus determine the dimension of the kernel. ==> Ax=0 ==> x=By.
+b. Find a basis of the image of A , and thus determine the dimension of the image. ==> A=[ v[1] ... v[m] ] ==> use rref to find redundant ==> bases.
+
+Theorem 3.3.5  Using rref to construct a basis of the image 
+To construct a basis of the image of A, pick the column vectors of A that correspond to the columns of rref(A) containing the leading 1’s.
+
+Theorem 3.3.6 Dimension of the image
+For any matrix A, dim(imA) = rank(A).
+
+Theorem 3.3.7 Rank-Nullity Theorem
+For any n*m matrix A, dim(ker A) + dim(im A) = m.
+The dimension of ker(A) is called the nullity of A, so (nullity of A) - (rank of A) = m. It's the fundamental theorem of linear algebra.
+m — dim(ker A) = dim(im A)
+
+SUMMARY 3.3.10  Various characterizations of invertible matrices
+For an n*n matrix A, the following statements are equivalent.
+1. A is invertible.
+2. The linear system Ax=b has a unique solution x, for all b in R[n].
+3. rref(A) = n.
+4. rank(A) = n.
+5. im(A) = R[n].
+6. ker(A) = {0}.
+7. The column vectors of A form a basis of R[n].
+8. The column vectors of A span R[n].
+9. The column vectors of A are linearly independent.
+
 

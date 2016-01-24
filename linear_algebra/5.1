@@ -1,0 +1,81 @@
+                Chapter 5 Orthogonality and Least Squares
+
+5.1 Orthogonal Projections and Orthonormal Bases
+
+Definition 5.1.1  Orthogonality, length, unit vectors
+a. Two vectors v and w in R[n] are called perpendicular or orthogonal if
+   v.w = 0.
+b. The length (or magnitude or norm) of a vector v in R[n] is ||v||.
+c. A vector u in R[n] is called a unit vector if its length is 1.
+
+A vector x in R[n] is said to be orthogonal to a subspace V of R[n] if x is orthogonal to all the vectors v in V, meaning that x.v = 0 for all vectors v in V.
+If a basis v1,...,vm of V, then x is orthogonal to V if (and only if) x is orthogonal to all the vectors v1,...,vm.
+
+Definition 5.1.2  Orthonormal vectors
+The vectors u1,u2,...,um in R[n] are called orthonormal if they are all unit vectors and orthogonal to one another.
+The vectors e1,e2,...,en in R[n] are orthonormal.
+
+Theorem 5.1.3 Properties of orthonormal vectors
+a. Orthonormal vectors are linearly independent.
+b. Orthonormal vectors u1,...,un in R[n] form a basis of R[n].
+
+Theorem 5.1.4 Orthogonal projection
+Consider a vector x in R[n] and a subspace V of R[n]. Then x = x_ + x|, where x_ is in V and x| is perpendicular to V, and this representation is unique.
+The vector x_ is called the orthogonal projection of x onto V, denoted by proj[V](x). The transformation T(x) = proj[V](x) = x_ from R[n] to R[n] is linear.
+
+Theorem 5.1.5 Formula for the orthogonal projection
+If V is a subspace of R[n] with an orthonormal basis u1,...,um, then
+  proj[V](x) = x_ = (u1.x)u1 + ... + (um.x)um for all x in R[n].
+
+x_ = c[1]u[1] + ... + c[m]u[m]
+x| = x - x_ = x - c[1]u[1] + ... + c[m]u[m]
+x|.u[i] = 0 ==> x.u[i] - (c[1]u[1]+ ...+c[m]u[m]).u[i] = 0 ==> c[i] = u[i].x
+x_ = (u[1].x)u[1] + ... + (u[m].x)u[m] 
+x| = x - (u[1].x)u[1] + ... + (u[m].x)u[m] 
+
+Theorem 5.1.6
+Consider an orthonormal basis u[1],...,u[n] of R[n]. Then
+x = (u[1].x)u[1] + ... + (u[n].x)u[n] for all x in R[n]
+
+Definition 5.1.7 Orthogonal complement
+Consider a subspace V of R[n]. The orthogonal complement V| of V is the set of those vectors x in R[n] that are orthogonal to all vectors in V:
+V| = {x in R[n]: v.x = 0, for all v in V}.
+Note that V| is the kernel of the orthogonal projection onto V.
+
+Theorem 5.1.8 Properties of the orthogonal complement
+Consider a subspace V of R[n].
+a. The orthogonal complement V| of V is a subspace of R[n].
+b. The intersection of V and V| consists of the zero vector alone.
+c. dim(V) + dim(V|) = n
+d. (V|)| = V
+
+Theorem 5.1.9 Pythagorean theorem
+Consider two vectors x and y in R[n]. The equation
+        ||x + y||**2 = ||x||**2 + ||y||**2
+holds if (and only if) x and y are orthogonal.
+Proof:
+||x + y||**2 = (x+y).(x+y) = x.x + 2x.y + y.y = ||x||**2 + ||y||**2 + 2x.y
+
+Theorem 5.1.10 An inequality for the magnitude of proj[V](x)
+Consider a subspace V of R[n] and a vector x in R[n]. Then
+              ||proj[V](x)|| <= ||x||
+The statement is an equality if (and only if) x is in V.
+||x||**2 = ||proj[V](x)||**2 + ||(x|)||**2 >= ||proj[V](x)||**2
+
+Theorem 5.1.11 Cauchy-Schwarz inequality
+If x and y are vectors in R[n], then
+|x.y| <= ||x||*||y||
+This statement is an equality if (and only if) x and y are parallel.
+Proof:
+||x|| >= ||proj[V](x)|| = ||(x.u)u|| = |x.u| = |x.(y/||y||)| = |x.y|/||y|| 
+==> ||x||*||y|| >= |x.y|
+
+Definition 5.1.12 Angle between two vectors
+Consider two nonzero vectors x and y in R[n]. The angle θ between these vectors is defined as
+  θ = arccos (x.y / ||x||*||y||) (θ is between 0 and π)
+
+Definition 5.1.13 Correlation coefficient
+The correlation coefficient r between two characteristics of a population is the cosine of the angle θ between the deviation vectors x and y for the two characteristics:
+  r = cos(θ) = x.y / ||x||*||y||
+
+

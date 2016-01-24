@@ -1,0 +1,62 @@
+                    Chapter 4  Linear Spaces
+
+4.2 Linear Transformations and Isomorphisms
+
+Definition 4.2.1  Linear transformations, image, kernel, rank, nullity
+For two linear spaces V and W.
+1.A function T from V to W is called a linear transformation if:
+  T(f+g) = T(f) + T(g) and T(kf) = kT(f)
+  for all elements f and g of V and for all scalars k.
+2.For a linear transformation T from V to W, we let:
+  im(T) = {T(f) : f in V} and ker(T) = {f in V : T(f)=0}.
+3.im(T) is a subspace of target space W.
+  ker(T) is a subspace of domain V.
+4.If the image of T is finite dimensional, then dim(im T) is the rank of T.
+  If the kernel of T is finite dimensional, then dim(ker T) is the nullity of T.
+5.If V is finite dimensional, then the rank-nullity theorem holds:
+  dim(V) = rank(T) + nullity(T) = dim(im T) + dim(ker T).
+
+Consider the linear transformation D(f)=f' from C[oo] to C[oo].
+The kernel of D is D(f)=f'=0, so f(x)=k, the kernel of D is one dimentional, a basis is f(x)=1, the nullity of D is 1.
+The image of D is g=D(f)=f', it's all smooth functions. im(D)=C[oo].
+
+Let C[0, 1] be the linear space of all continuous functions from the closed interval [0, 1] to R. The transformation I(f) = f(x)dx[0,1].
+The image of I(f) consists of all real numbers b, one of f(x) is f(x)=b.Therefore, im(I) = R, and rank(I) = 1.
+
+Let V be the space of all infinite sequences of real numbers. Consider the
+transformation T(x0,x1,x2,...) = (x1,x2,x3,...) from V to V.
+a. Show that T is a linear transformation.
+  T((x0,x1,x2,...)+(y0,y1,y2,...)) = T(x0+y0,x1+y1,x2+y2,...) = 
+  (x1+y1,x2+y2,...) = (x1,x2,...) + (y1,y2,...) = T(x0,x1,...)+T(y0,y1,...)
+  T(k(x0,x1,x2,...)) = T(kx0,kx1,kx2,...) = (kx1,kx2,...) = k(x1,x2,...) =
+  kT(x0,x1,x2,...)
+b. Find the kernel of T.
+  (x0, 0, 0, ...), one dimentional, basis (1, 0, 0, ...), the nullity is 1.
+c. Is the sequence (1, 2, 3, . . . ) in the image of T?
+  T(0, 1, 2, ...).
+d. Find the image of T.
+  V
+
+The transformation L([[a c] [b d]] = [a b c d] from R[2*2] to R[4].
+The linear spaces R[2*2] and R[4] have essentially the same structure. We say that the linear spaces R[2*2] and R[4] are isomorphic. The invertible linear transformation L is called an isomorphism.
+
+Definition 4.2.2  Isomorphisms and isomorphic spaces
+An invertible linear transformation T is called an isomorphism. We say that the linear space V is isomorphic to the linear space W if there exists an isomorphism T from V to W.
+
+Theorem 4.2.3   Coordinate transformations are isomorphisms
+If B=(f1,f2,...,fn) is a basis of a linear space V, then the coordinate transformation L(f)=[f][B] from V to R[n] is an isomorphism. Thus V is isomorphic to R[n]; the linear spaces V and R[n] have the same structure.
+f = c1f1 + ... + cnfn in V  --L[B]--> [f][B] = [c1 ... cn] in R[n]
+f = c1f1 + ... + cnfn in V  <--L[B]`-- [f][B] = [c1 ... cn] in R[n]
+**Any n-dimensional linear space V is isomorphic to R[n].**
+We don’t need new theory for finite dimensional spaces.
+
+Theorem 4.2.4   Properties of isomorphisms
+The linear spaces V and W are assumed to be finite dimensional.
+a. A linear transformation T from V to W is an isomorphism if (and only if)
+   ker(T) = {0} and im(T) = W.
+b. If V is isomorphic to W, then dim(V) = dim(W).
+c. Suppose T is a linear transformation from V to W with ker(T) = {0}. If
+   dim(V) = dim(W), then T is an isomorphism.
+d. Suppose T is a linear transformation from V to W with im(T) = W. If
+   dim(V) = dim(W), then T is an isomorphism.
+

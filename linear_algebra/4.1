@@ -1,0 +1,115 @@
+                    Chapter 4  Linear Spaces
+
+4.1 Introduction to Linear Spaces
+
+Definition 4.1.1  Linear spaces(or vector spaces)
+A linear space V is a set endowed with a rule for addition and a rule for scalar multiplication such that these operations satisfy the following eight rules(for all f, g, h in V and all c, k in R):
+1. (f+g)+h = f+(g+h).
+2. f+g = g+f.
+3. There exists a neutral element n in V such that f+n=f, for all f in V.
+   This n is unique and denoted by 0.
+4. For each f in V there exists a g in V such that f+g=0.
+   This g is unique and denoted by (-f).
+5. k(f+g) = kf+kg.
+6. (c+k)f = cf+kf.
+7. c(kf) = (ck)f.
+8. 1f = f.
+
+In R[n],the prototype linear space,the neutral element is the zero vector 0.
+
+Spaces of Functions
+Let F(R, R) be the set of all functions from R to R, with the operations:
+  (f + g)(x) = f(x) + g(x)  and   (kf)(x) = kf(x)
+Then F(R, R) is a linear space.
+The neutral element is the zero function, f(x) = 0 for all x.
+
+If addition and scalar multiplication are given, then R[n*m], the set of all n*m matrices, is a linear space. The neutral element is the zero matrix.
+
+The set of all infinite sequences of real numbers is a linear space, where addition and scalar multiplication are defined term by term:
+  (x0, x1, x2, ...) + (y0, y1, y2, ...) = (x0+y0, x1+y1, x2+y2, ...)
+  k(x0, x1, x2, ...) = (kx0, kx1, kx2, ...)
+The neutral element is the sequence (0, 0, 0, ...).
+
+The linear equations in three unknowns, ax + by + cz = d, where a, b, c and d are constants, form a linear space.
+The operations (addition and scalar multiplication) are familiar from the process of Gaussian elimination. The neutral element is the equation 0 = 0 (with a = b = c = d = 0).
+
+Analytic Geometry
+
+Let C be the set of the complex numbers z = a+bi, where a and b are real numbers.
+addition: (a + ib) + (c + id) = (a + c) + i(b + d).
+scalar multiplication: k(a + ib) = ka + i(kb).
+The complex numbers C with the two operations form a linear space. the neutral element is the complex number 0 = 0 + 0i.
+
+Definition 4.1.2  Subspaces
+A subset W of a linear space V is called a subspace of V if:
+a. W contains the neutral element 0 of V.
+b. W is closed under addition (if f and g are in W, then so is f + g).
+c. W is closed under scalar multiplication (if f is in W and k is a scalar, then kf is in W).
+
+1.Show that the polynomials of degree<2, of the form f(x) = a + bx + cx**2, are a subspace W of the space F(R, R) of all functions from R to R.
+2.Show that the differentiable functions form a subspace W of F(R, R).
+3.more subspaces of F(R, R):
+    a. C[oo], the smooth functions, that can differentiate as many times as we want. This subspace contains all polynomials, exponential functions, sin(x), and cos(x), for example.
+    b. P , the set of all polynomials.
+    c. Pn, the set of all polynomials of degree < n.
+4.Show that the matrices B that commute with A = [ [0 2] [1 3] ] form a subspace of R[2*2].(BA=AB)
+5.Consider the set W of all noninvertible 2*2 matrices. Is W a subspace of R[2*2]?(counter-example)
+
+Definition 4.1.3  Span, linear independence, basis, coordinates
+Span, linear independence, basis, coordinates
+Consider the elements f1,...,fn in a linear space V.
+a. We say that f1,...,fn span V if every f in V can be expressed as a linear
+   combination of f1,...,fn.
+b. We say that f(i) is redundant if it is a linear combination of f1,...,
+   f(i-1). The elements f1,...,fn are called linearly independent if none 
+   of them is redundant. This is the case if the equation c1f1+...+cnfn=0
+   has only the trivial solution c1=...=cn=0.
+c. We say that elements f1,...,fn are a basis of V if they span V and are
+   linearly independent. This means that every f in V can be written unique
+   as a linear combination f=c1f1+...+cnfn. The coefficients c1,...,cn are
+   called the coordinates of f with respect to the basis B=(f1,...,fn). 
+
+The vector [c1 ... cn] in R[n] is called the B-coordinate vector of f, denoted by [f][B]. The transformation L(f)=[f][B]=[c1 ... cn] from V to R[n] is called the B-coordinate transformation, sometimes denoted by L[B].
+
+Theorem 4.1.4   Linearity of the coordinate transformation L[B]
+If B is a basis of a linear space V, then:
+a.[f+g][B] = [f][B] + [g][B], for all elements f and g of V.
+b.[kf][B] = k[f][B], for all f in V and for all scalars k.
+
+Theorem 4.1.5 Dimension
+If a linear space V has a basis with n elements, then all other bases of V consist of n elements as well. n is the dimension of V: dim(V) = n.
+Example:
+1.Find a basis of R[2*2].(dim=4)
+2.Find a basis of P2.(dim=3)
+
+SUMMARY 4.1.6   Finding a basis of a linear space V
+a. Write down a typical element of V, in terms of some arbitrary constants.
+b. Using the arbitrary constants as coefficients, express your typical element as a linear combination of some elements of V.
+c. Verify that the elements of V in this linear combination are linearly independent, then they will form a basis of V.
+
+Theorem 4.1.7   Linear differential equations
+The solutions of the differential equation:
+  f"(x) + af'(x) + bf(x) = 0 (where a and b are constants)
+form a two-dimensional subspace of the space C[oo] of smooth functions.
+
+More generally, the solutions of the differential equation:
+  f'n'(x) + a[n-1]f'n-1'(x) + a[1]f'(x) + a[0]f(x) = 0
+(where a[0],...,a[n-1] are constants) form an n-dimensional subspace of C[oo]. A differential equation of this form is called an nth-order linear differential equation with constant coefficients.
+
+Find all solutions of the DE: f"(x) + f'(x) - 6f(x) = 0.
+
+Definition 4.1.8  Finite dimensional linear spaces
+A linear space V is called finite dimensional if it has a (finite) basis f1,...,fn so that we can define its dimension dim(V) = n. Otherwise, the space is called infinite dimensional.
+
+Find all solutions of the DE: f"(x) = -f(x).
+a.if g(x) is in V, then the function (g(x))**2 + (g'(x))**2 is constant.
+  {(g(x))**2 + (g'(x))**2}' = 2g(x)g'(x) + 2g'(x)g"(x) = 0 
+b.if g(x) is in V, with g(0) = g'(0) = 0, then g(x) = 0 for all x.
+  (g(x))**2+(g'(x))**2=C && g(0)=g'(0)=0 ==> (g(x))**2+(g'(x))**2=0 ==>
+  g(x)=g'(x)=0.
+c.If f(x) is in V, then g(x) = f(x) — f(0)cos(x) - f'(0)sin(x) is in V as well. Verify that g(0)=0 and g'(0)=0. We can conclude that g(x)=0 for all x, so that f(x) = f(0)cos(x) + f'(0)sin(x). It follows that the functions cos(x) and sin(x) span V, as claimed.
+  g"(x) = f"(x) - f(0)(-cosx) - f'(0)(-sinx) = -g(x) ==>
+  g(0) = f(0) - f(0)cos0 - f'(0)sin0 = 0 &&
+  g'(0) = f'(0) - f(0)(-sin0) - f'(0)cos0 = 0 ==> g(x) = 0 ==>
+  f(x) = f(0)cos(x) + f'(0)sin(x)
+
