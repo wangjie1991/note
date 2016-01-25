@@ -1,0 +1,57 @@
+                Chapter 5 Orthogonality and Least Squares
+
+5.3 Orthogonal Transformations and Orthogonal Matrices
+
+Definition 5.3.1 Orthogonal transformations and orthogonal matrices
+A linear transformation T from R[n] to R[n] is called orthogonal if it preserves the length of vectors: #T(x)# = #x#, for all x in R[n].
+If T(x)=Ax is an orthogonal transformation, then A is an orthogonal matrix.
+
+V is a subspace of R[n]. For a vector x in R[n], the vector ref[V](x) = x_ - x| is called the reflection of x about V. Reflections are orthogonal transformations.
+By the Pythagorean theorem, we have:
+#ref[V](x)#2 = #x_#2 + #-x|#2 = #x_#2 + #x|#2 = #x#2
+
+Theorem 5.3.2 Orthogonal transformations preserve orthogonality
+Consider an orthogonal transformation T from R[n] to R[n]. If the vectors v and w in R[n] are orthogonal, then so are T(v) and T(w).
+Proof: #T(v)+T(w)#2 = #T(v+w)#2 = #v+w#2 = #v#2 + #w#2 = #T(v)#2 + #T(w)#2
+
+Theorem 5.3.3 Orthogonal transformations and orthonormal bases
+a. A linear transformation T from R[n] to R[n] is orthogonal if (and only if) vectors T(e[1]), T(e[2]),..., T(e[n]) form an orthonormal basis of R[n].
+b. An n*n matrix A is orthogonal if (and only if) its columns form an thonormal basis of R[n].
+Proof:
+x = x[1]e[1] + ... + x[n]e[n] in R[n]. Then
+#T(x)#2 = #x[1]T(e[1]) + ... x[n]T(e[n])#2
+        = #x[1]T(e[1])#2 + ... + x[n]T(e[n])#2 (by Pythagoras)
+        = x[1]**2 + ... + x[n]**2
+        = #x#2
+ 
+Theorem 5.3.4 Products and inverses of orthogonal matrices
+a. The product AB of two orthogonal n*n matrices A and B is orthogonal.
+b. The inverse A` of an orthogonal n*n matrix A is orthogonal.
+
+Definition 5.3.5  The transpose of a matrix
+Consider an m*n matrix A. The transpose A^ of A is the n*m matrix whose ijth entry is the jith entry of A. A square matrix A is symmetric if A^=A, and A is called skew-symmetric if A^=-A.
+
+Theorem 5.3.6
+If v and w are two (column) vectors in R[n], then v.w = v^w
+
+Theorem 5.3.7
+Consider an n*n matrix A. The matrix A is orthogonal if (and only if) 
+A^A = I[n] or, equivalently, if A` = A^.
+
+SUMMARY 5.3.8 Orthogonal matrices
+Consider an n*n matrix A. Then the following statements are equivalent:
+1. A is an orthogonal matrix.
+2. The transformation L(x) = Ax preserves length.
+3. The columns of A form an orthonormal basis of R[n].
+4. A^A = I[n].
+5. A` = A^.
+
+Theorem 5.3.9 Properties of the transpose
+a. If A is an n*p matrix and B is a p*m matrix, then (AB)^ = B^A^.
+b. If an n*n matrix A is invertible, then so is A^, and (A^)` = (A`)^.
+c. For any matrix A, rank(A) = rank(A^).
+
+Theorem 5.3.10  The matrix of an orthogonal projection
+Consider a subspace V of R[n] with orthonormal basis u[1],...,u[m]. The matrix of the orthogonal projection onto V is QQ^, Q = [u[1] ... u[m]].
+
+

@@ -1,0 +1,46 @@
+                Chapter 5 Orthogonality and Least Squares
+
+5.2 Gram-Schmidt Process and QR Factorization
+An algorithm that convert any basis v[1],...,v[m] of a subspace V of R[n] into an orthonormal basis u[1],...,u[m] of V.
+
+low-dimensional cases:
+1). find an orthonormal basis u[1] = (1/#v[1]#)v.
+2). v[2] = v[2]_ + v[2]|, v[2]_ is parallel with u[1].
+3). v[2]| = v[2] - v[2]_ = v[2] - (u[1].v[2])u[1]
+4). u[2] = (1/#v[2]|#)(v[2]|)
+
+[ v[1] v[2] ] = [ u[1] u[2] ] [c1 c2]
+    M         =       Q          R
+This is refered to as the QR factorization of Matrix M.
+
+Theorem 5.2.1 The Gram-Schmidt process
+Consider a basis v[1],...,v[m] of a subspace V of R[n]. For j=2,...,m, we resolve the vector v[j] into its components parallel and perpendicular to the span of the preceding vectors, v[1],...,v[j-1]:
+  v[j] = v[j]_ + v[j]| , with respect to span(v[1],...,v[j-1])
+then:
+  u[1] = (1/#v[1]#)v[1],..., u[m] = (1/#v[m]|#)v[m]|
+and:
+  v[j]| = v[j] - v[j]_ = v[j] - (u[1].v[j])u[1] - ... - (u[j-1].v[j])u[j-1]
+
+Β=(v[1],...,v[m]), Π=(u[1],...,u[m]), So [v[1]  v[m]] = [u[1]  u[m]]R.
+The relationship among the matrices M,Q and R.
+    [x][Π]\
+      |    Q
+      |     \
+      R      x
+      |     /
+      |    M
+    [x][Β]/
+
+[j]th column of R are the coordinates of v[j] with respect to the basis  Π=(u[1],...,u[m]).
+r[ij] in R(upper triangular) with the rule:
+a. i<j, r[ij] = u[i].v[j].
+b. i=j, r[ij] = #v[j]|#.
+c. i>j, r[ij] = 0.
+
+Theorem 5.2.2 QR factorization
+Consider an n*m matrix M with linearly independent columns v[1],...,v[m].
+Then there exists an n*m matrix Q whose columns u[1],...,u[m] are orthonormal and an upper triangular matrix R with positive diagonal entries such that M = QR.
+This representation is unique. Furthermore, r[11]=#v[1]#, r[jj]=#v[j]|#
+(j=2,...,m), and r[ij]=u[i].v[j](for i<j).
+
+
