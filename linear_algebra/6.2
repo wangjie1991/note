@@ -1,0 +1,16 @@
+                      Chapter 6 Determinants
+
+6.2 Properties of the Determinant
+The main goal of this section is to show that a square matrix of any size is invertible if (and only if) its determinant is nonzero.
+
+How to express det(A) in terms of det(A)?
+For each pattern P in A, we can consider the corresponding (transposed) pattern P^ in A^.
+The two patterns P and P^ involve the same numbers, and they contain the same number of inversions, so (sgn P)(prod P) = (sgn P^)(prod P^).
+
+Theorem 6.2.1 Determinant of the transpose
+If A is a square matrix, then det(A^) = det(A).
+
+Theorem 6.2.2 Linearity of the determinant in the rows and columns
+Consider fixed row vectors v[1],...,v[i-1],v[i+1],v[n] with n components.
+Then the function T(x) = det([v[1] ... v[i-1] x v[i+1] ... v[n]]) from R[1*n] to R is a linear transformation.
+This property is referred to as linearity of the determinant in the ith row. Likewise, the determinant is linear in all the columns.

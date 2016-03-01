@@ -1,0 +1,43 @@
+                Chapter 5 Orthogonality and Least Squares
+
+5.4 Least Squares and Data Fitting
+
+A subspace V = image(A) of R[n], where A = [v[1] v[2] ... v[m]].Then
+V| = {x in R[n]: v.x = 0, for all v in V}
+   = {x in R[n]: v[i]^x = 0, for i = 1,...,m}
+That is V| = (im(A))| = ker(A^)
+
+Theorem 5.4.1
+For any matrix A, (im(A))| = ker(A^)
+
+Theorem 5.4.2
+a. If A is an n*m matrix, then ker(A) = ker(A^A).
+b. If A is an n*m matrix with ker(A) = {0}, then A^A is invertible.
+Proof:
+a.(1)the kernel of A is contained in the kernel of A^A.
+  (2)A^Ax = 0. Then Ax is in the image of A and in the kernel of A^.
+     ker(A^) is the orthogonal complement of im(A).
+     Ax is the intersection of ker(A^) and im(A), the vector Ax is 0.
+
+Theorem 5.4.3
+Consider a vector x in R[n] and a subspace V of R[n]. Then the orthogonal projection proj[V](x) is the vector in V closest to x, in that
+    #x - proj[V](x)# < #x - v#
+for all v in V different from proj[V](x).
+
+Definition 5.4.4  Least-squares solution
+Consider a linear system Ax = b, where A is an n*m matrix. A vector x* in R[m] is called a least-squares solution of this system if 
+#b — Ax*# <= #b — Ax# for all x in R[m].
+
+#b — Ax*# <= #b — Ax# ==> Ax* = proj[V](b)(V=im(A)) ==> b-Ax*=b-proj[V](b),
+b — Ax* is in V|=(im(A))|=ker(A^) ==> A^(b - Ax*) = 0 ==> A^Ax* = A^b
+
+Theorem 5.4.5 The normal equation
+The least-squares solutions of the system Ax = b are the exact solutions of the (consistent) system A^Ax = A^b. The system A^Ax = A^b is called the normal equation of Ax = b.
+
+Theorem 5.4.6
+If ker(A) = {0}, then the linear system Ax = b has the unique least-squares solution x* = (A^A)`A^b.
+
+Theorem 5.4.7 The matrix of an orthogonal projection
+Consider a subspace V of R[n] with basis v[1],v[2],...,v[m]. Let A = [v[1] ... v[m]]. Then the matrix of the orthogonal projection onto V is A(A^A)`A^.
+
+

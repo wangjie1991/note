@@ -1,0 +1,65 @@
+                      Chapter 6 Determinants
+
+6.1 Introduction to Determinants
+
+
+The Determinant of a 3x3 Matrix
+
+The matrix A fails to be invertible if vectors u, v and w are contained in some plane V. In this case, the cross product v*w, being perpendicular to V, is perpendicular to vector u, so that u.(v*w)=0 If A is invertible.
+
+Definition 6.1.1  Determinant of a 3*3 matrix, in terms of the columns
+If A=[u v w], then det(A) = u.(v*w). Matrix A is invertible if (and only if) det(A)!=0.
+
+Theorem 6.1.2 Sarrus’s rule
+det(A) = a11a22a33 + a12a23a31 + a13a21a32 - a13a22a31 - a11a23a32 — a12a21a33
+
+The determinant of an upper (or lower) triangular 3*3 matrix is the product of the diagonal entries.
+
+det(B) = -det(A) if B is obtained by swapping any two columns or any two rows of a 3*3 matrix A. This is the alternating property of the determinant on the columns and on the rows.
+
+
+Linearity Properties of the Determinant
+
+The function F(A) = det(A) from the linear space R[3*3] to R is not a linear transformation.
+Proof : F(I[3] + I[3]) = F(2I[3]) = 8 while F(I[3]) + F(I[3]) = 1 + 1 = 2.
+
+The function T([x1 x2 x3]) = det([[2 3 4] [x1 x2 x3] [5 6 7]]) from R[3] to R is a linear transformation.
+
+the 3*3 determinant is linear in any column.
+
+L(x) = det([v1 v2 x]), then L(x+y) = L(x) + L(y) and L(kx) = kL(x) or
+det([v1 v2 x+y]) = det([v1 v2 x]) + det([v1 v2 y]) and
+det([v1 v2 kx]) = k*det([v1 v2 x])
+
+
+The Determinant of an n*n Matrix
+
+Each of the terms in the expression of determinant is a product of some factors involving exactly one entry from each row and each column of the matrix.
+A choice of a number in each row and column of a square matrix is a pattern in the matrix. The simplest pattern is the diagonal pattern.
+There are n(n—1)(n—2)*3*2*1 (n!, read n factorial) patterns in an n*n matrix.
+
+For a pattern P in a square matrix, the product of all the entries in the pattern is denoted prod P. For example, for the pattern P = (a[12], a[23], a[31]), prod P = a[12]*a[23]*a[31]. Then:
+                    det(A) = sum{(+-)prod P}
+
+How the signs of the summands are chosen? These signs are related to the alternating property of the determinant, since we perform two row swaps to bring the matrix into diagonal form.
+    |0     0     a[31]|   |a[31] 0     0    |
+det |0     a[22] 0    | = |0     a[22] 0    | = -a[31]a[22]a[13]
+    |a[31] 0     0    |   |0     0     a[31]| = -a[13]a[22]a[31]
+
+Two numbers in a pattern are inverted if one of them is to the right and above the other.
+The sign of prod P depends on the number of inversions in P. We get the plus sign if the number of inversions is even and the minus sign if that number is odd. Define the signature of a pattern P as sgn P = (-1)(number of inversions in P), then:
+                    det(A) = sum{(sgn P)(prod P)}
+
+Theorem 6.1.4 Determinant of a triangular matrix
+The determinant of an (upper or lower) triangular matrix is the product of the diagonal entries of the matrix.
+
+
+The Determinant of a Block Matrix
+
+Theorem 6.1.5 Determinant of a block matrix
+If M = [[A 0] [B C]], where A and C are square matrices (not necessarily of the same size), then:
+                  det(M) = det(A)*det(C).
+Likewise:
+                  det([[A B] [0 C]]) = det(A)*det(C).
+
+

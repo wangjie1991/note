@@ -1,0 +1,33 @@
+                Chapter 5 Orthogonality and Least Squares
+
+5.5 Inner Product Spaces
+
+Definition 5.5.1  Inner products and inner product spaces
+An inner product in a linear space V is a rule that assigns a real scalar (denoted by <f,g>) to any pair f,g of elements of V, such that the following properties hold for all f,g,h in V, and all c in R:
+  a. <f,g> = <g,f> (symmetry)
+  b. <f+h,g> = <f,g> + <h,g>
+  C. <cf,g> = c<f,g>
+  d. <f,f> > 0, for all nonzero f in V
+A linear space endowed with an inner product is called an inner product space.
+
+Example 1
+Consider the linear space C[a,b] consisting of all continuous functions whose domain is the closed interval [a,b], where a<b.
+For functions f and g in C[a,b], we define <f,g> = [a,b]f(t)g(t)dt.
+
+<f,f> = [a,b]f(t)f(t)dt ==> f(t)f(t) is positive in interval [a,b] ==>
+[a,b]f(t)f(t)dt > 0 ==> <f,f> > 0
+
+<f,g> = [a,b]f(t)g(t)dt = sum[1,m]{f(t[k])g(t[k])Δt} = 
+([f(t1) ... f(tm)].[g(t1) ... g(tm)])Δt
+
+Example 3
+The trace of a square matrix is the sum of its diagonal entries. In R[n*m], the space of all n*m matrices, define the inner product <A,B> = trace(A^B)
+
+Definition 5.5.2  Norm, orthogonality
+The norm (or magnitude) of an element f of an inner product space is
+  #f# = <f,f>*(1/2)
+Two elements f and g of an inner product space are called orthogonal (or perpendicular) if <f,g> = 0.
+Define the distance between two elements of an inner product space as the norm of their difference: dist(f,g) = #f-g#.
+
+Theorem 5.5.3 Orthogonal projection
+If g1,...,gm is an orthonormal basis of a subspace W of an inner product space V, then proj[W](f) = <g1,f>g1 + ... + <gm,f>gm for all f in V.
