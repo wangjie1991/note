@@ -3,7 +3,7 @@
 6.2 Properties of the Determinant
 The main goal of this section is to show that a square matrix of any size is invertible if (and only if) its determinant is nonzero.
 
-How to express det(A) in terms of det(A)?
+How to express det(A^) in terms of det(A)?
 For each pattern P in A, we can consider the corresponding (transposed) pattern P^ in A^.
 The two patterns P and P^ involve the same numbers, and they contain the same number of inversions, so (sgn P)(prod P) = (sgn P^)(prod P^).
 
@@ -14,3 +14,90 @@ Theorem 6.2.2 Linearity of the determinant in the rows and columns
 Consider fixed row vectors v[1],...,v[i-1],v[i+1],v[n] with n components.
 Then the function T(x) = det([v[1] ... v[i-1] x v[i+1] ... v[n]]) from R[1*n] to R is a linear transformation.
 This property is referred to as linearity of the determinant in the ith row. Likewise, the determinant is linear in all the columns.
+T(x + y) = T(x) + T (y) and T(kx) = kT(x)
+
+
+Determinants and Gauss-Jordan Elimination
+
+How the three elementary row operations affect the determinant?
+a. Row division: dividing a row by a nonzero scalar k.
+  A=[v[1]...v[i]...v[n]] and B=[v[1]...v[i]/k...v[n]], then
+  det(B)=(1/k)det(A).
+b. Row swap: swapping two rows.
+  A=[v[1]...v[i]...v[j]...v[n]] and B=[v[1]...v[j]...v[i]...v[n]], 
+  For each pattern P in A, we can find the corresponding pattern P[s] in B,
+  both contain the same entries in each row and column.
+  Since swapping rows, P[s] is one less (or more) than P (see example), 
+  prod P[s] = prod P and sgn P[s] = - sgn P.
+  Since these remarks apply to all patterns in A, we can conclude that
+  det(B) = -det(A).
+c. Row addition: adding a multiple of a row to another row.
+  If a matrix A has two equal rows, swap the two equal rows and call the
+  resulting matrix B, then A=B and det(B) = -det(A) = det(A), So det(A) = 0.
+  A=[...v[i]...v[j]...] and B=[...v[i]...v[j]+kv[i]...], then
+  det(B) = det(A) + k*det([...v[i]...v[i]...]) = det(A) + 0 = det(A).
+
+Suppose that in the course of Gauss-Jordan elimination we swap rows s times and divide various rows by the scalars k1,k2,...,kr, then:
+      det(rref(A)) = (-1)**s * 1/(k1*k2*...*kr) * det(A).
+      det(A) = (-1)**s * (k1*k2*...*kr) * det(rref(A)).
+
+If A is invertible, then rref(A) = I[n] and det(rref(A)) = det(I[n]) = 1, so that det(A) = (-1)**s * (k1*k2*...*kr) != 0.
+
+If A is noninvertible, then the last row of rref(A) contains all zeros, so that det(rref(A)) = 0. It follows that det(A) = 0.
+
+Theorem 6.2.4 Invertibility and determinant
+A square matrix A is invertible if and only if det(A) != 0.
+
+
+Determinant of a Product
+
+Theorem 6.2.6 Determinant of a product of matrices
+If A and B are n*n matrices, then det(AB) = (det(A))(det(B)).
+
+Proof:
+a.If A is invertible.
+  To show that rref([A | AB]) = [I[n] | B]:
+  [A | AB][B/-I[n]] = AB - ABI[n] = 0 ==>
+  [B/-I[n]] is in the kernel of [A | AB] ==>
+  [B/-I[n]] is in the kernel of rref([A | AB]) ==> }
+  rref([A | AB]) = [I[n] | M] ==>                  }
+  [B/-I[n]] is in the kernel of [I[n] | M] ==>
+  [I[n] | M][B/-I[n]] = 0 ==> M=B ==>
+  rref([A | AB]) = [I[n] | B].
+
+  Suppose we get I[n] from A by some row operations, then we can perform 
+  the same operations to get B from AB. That is:
+  if det(A) = (-1)**s * (k1*k2...*kr) * det(I[n]),
+  then det(AB) = (-1)**s * (k1*k2...*kr) * det(B) = det(A)det(B).
+
+b.If A is not invertible, then AB is not invertible, so that
+  (det A)(det B) = 0(det B) = 0 = det(AB).
+
+If matrix A is similar to B, then there exists an invertible matrix S such that AS = SB. So (det A)(det S) = (det S)(det B) ==> det(A) = det(B).
+
+Theorem 6.2.7 Determinants of similar matrices
+If matrix A is similar to B, then det(A) = det(B).
+
+Theorem 6.2.8 Determinant of an inverse
+If A is an invertible matrix, then det(A`) = 1/det(A) = det(A)`.
+Proof: 1 = det(I[n]) = det(AA`) = det(A)det(A`) ==> det(A`) = 1/det(A).
+
+
+Minors and Laplacc Expansion
+
+Definition 6.2.9  Minors
+For an n*n matrix A, let A[ij] be the matrix obtained by omitting the ith row and the jth column of A. The determinant of the (n-1)*(n-1) matrix A[ij] is called a minor of A.
+
+If A is a 3*3 matrix, then det A = a[11]det(A[11]) - a[21]det(A[21]) + a[31]det(A[31]). This is called the Laplace expansion (or cofactor expansion) of det A down the first column.
+The rule for the signs: a[ij]det(A[ij]) has a negative sign if i+j is odd.
+
+We will focus on the expansion down the jth column of A. Consider a pattern P in an n*n matrix A. For a fixed j, the pattern P will contain exactly one entry a[ij] in the jth column of A. Let P[ij] be the pattern in A[ij] that contains the same entries as P, except for the omitted entry a[ij].
+prod P = a[ij] * prod(P[ij]), sgn P = (-1)**(i+j) * sgn(P[ij]), so 
+(sgn P) * (prod P) = (-1)**(i+j) * a[ij] * (sgn P[ij]) * (prod P[ij]).
+det A = sum (sgn P)(prod P)
+  = sum[i=1~n]{sum[P contains a[ij]]{sgn(P)prod(P)}}
+  = sum[i=1~n]{sum[P contains a[ij]]{(-1)**(i+j)a[ij]sgn(P[ij])prod(P[ij])}}
+  = sum[i=1~n]{(-1)**(i+j)a[ij]sum[P contains a[ij]]{sgn(P[ij])prod(P[ij])}}
+  = sum[i=1~n]{(-1)**(i+j)a[ij]det(A[ij])}
+
+

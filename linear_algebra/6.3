@@ -1,0 +1,91 @@
+                      Chapter 6 Determinants
+
+6.2 Geometrical Interpretations of the Determinant; Cramer’s Rule
+
+Theorem 6.3.1
+The determinant of an orthogonal matrix is either 1 or — 1.
+Proof : If A is an orthogonal matrix, then A^A=I[n], so 
+det(A^A) = det(A^)det(A) = (det A)**2 = 1 ==> det(A) = 1 or det(A) = -1.
+
+det(A)=1 representing a rotation and det(A)=-1 representing a reflection about a line.
+
+Definition 6.3.2  Rotation matrices
+An orthogonal n*n matrix A with det(A) = 1 is called a rotation matrix, and the linear transformation T(x)=Ax is called a rotation.
+
+
+The Determinant as Area and Volume
+
+Geometrical interpretation of the determinant of a 2*2 matrix A:
+det A = det[v1 v2] = #v1#sinθ#v2#. θ is the oriented angle from v1 to v2.
+
+|det A| = |det[v1 v2]| = #v1#|sinθ|#v2# is the area of the parallelogram spanned by the vectors v1 and v2.
+
+If v2| denotes the component of v2 perpendicular to v1, then |sinθ|#v2# = #v2|#. So |det A| = #v1##v2|#.
+
+More generally, consider an invertible n*n matrix A = [v[1] v[2] ... v[n]].
+A = QR, where Q is an orthogonal matrix and R is an upper triangular matrix whose diagonal entries are r[11] = #v[1]# and r[jj] = #v[j]|#, for j>=2. So
+|det A| = |det Q||det R| = #v[1]##v[2]|#...#v[n]|#.
+
+Theorem 6.3.3 The determinant in terms of the columns
+If A is an n*n matrix with columns v[1],v[2],...,v[n], then
+        |det A| = #v[1]##v[2]|#...#v[n]|#.
+v[k]| is the component of v[k] perpendicular to span (v[1],...,v[k-1]).
+
+Theorem 6.3.4 Volume of a parallelepiped in R[3]
+Consider a 3*3 matrix A = [v1 v2 v3]. Then the volume of the parallelepiped defined by v1, v2 and v3 is |det A|. #v1##v2|# is base area and #v3|# is height.
+
+Definition 6.3.5  Parallelepipeds in R[n]
+Consider the vectors v[1], v[2], v[m] in R[n].
+The m-parallelepiped is the set of all vectors in R[n] of the form c[1]v[1]+...+c[m]v[m], where 0<=c[i]<=1.
+The m-volume V(v[1],...,v[m]) of this m-parallelepiped is V(v[1])=#v[1]# and V(v[1],...,v[m]) = V(v[1],...,v[m-1])#v[m]|#.  
+The formula for the m-volume is V(v[1],...,v[m]) = #v[1]##v[2]|#...#v[m]|#.
+
+Theorem 6.3.6 Volume of a parallelepiped in R[n]
+Consider the vectors v[1],v[2],...,v[m] in R[n]. Then the m-volume of the m-parallelepiped defined by the vectors v[1],...,v[m] is the square root of det(A^A), where A is the n*m matrix with columns v[1],v[2],...,v[m].
+In particular, if m = n, this volume is |det A|.
+
+Proof:
+Let A be the n*m matrix whose columns are v[1],v[2],...,v[m]. If the columns of A are linearly independent, then A=QR, A^A=R^Q^QR=R^R. So
+det(A^A)= det(R^R) = (det R)**2 = (r[11]r[22]...r[mm])**2
+        = (#v[1]##v[2]|#...#v[m]|#)**2 = (V(v[1],...v[m]))**2
+
+
+The Determinant as Expansion Factor
+How a linear transformation T affects the area of a region Ω in the plane.
+
+Generally, let Ω be the parallelogram defined by v1 and v2, B=[v1 v2]. Then 
+area of Ω = |det B|.
+area of T(Ω) = |det [Av[1] Av[2]]| = |det(AB)| = |det A||det B|.
+expansion factor = (area of T(Ω))/(area of Ω) = (|det A||det B|)/(|det B|)
+                 = |det A|.
+
+Theorem 6.3.7 Expansion factor
+For a linear transformation T(x) = Ax from R[2] to R[2], the |det A| is the expansion factor (area of T(Ω))/(area of Ω) of T on parallelograms Ω.
+
+For a linear transformation T(x) = Ax from R[n] to R[n], |det A| is the expansion factor of T on n-parallelepipeds for all v[1],...,v[n] in R[n]:
+V(Av[1],...Av[n]) = |det A|V(v[1],...v[n])
+
+The expansion factor |det A`| is the reciprocal of the expansion factor |det A|: |det A`| = 1/|det A|.
+The expansion factor |det AB| of the composite transformation is the product of the expansion factors |det A| and |det B|:|det AB| = |det A||det B|.
+
+Theorem 6.3.8 Cramer's rule
+Consider the linear system Ax = b, where A is an invertible n*n matrix.  The components x[i] of the solution vector x are x[i] = det(A[b,i])/det(A), where A[b,i] is the matrix obtained by replacing the ith column of A by b.
+
+Proof: Write A = [w[1] w[2] ... w[i] ... w[n]]. If x is the solution of the system Ax = b, then:
+det(A[b,i]) = det [w[1] w[2] ... b ... w[n]]
+            = det [w[1] w[2] ... Ax ... w[n]]
+            = det [w[1] w[2] ... (x[1]w[1]+...+x[n]w[n]) ... w[n]]
+            = det [w[1] w[2] ... x[i]w[i] ... w[n]]
+            = x[i]det([w[1] w[2] ... w[i] ... w[n]])
+            = x[i]det(A)
+Therefore, x[i] = det(A[b,i])/det(A).
+
+Consider an invertible n*n matrix A and write A` = [[m[11] ... m[n1]] ... [m[1n] ... m[nn]]].
+For the jth column of A`, A[m[1j] ... m[nj]] = e[j].
+By Cramer's rule, m[ij] = det(A[e[j],i]) / det(A). And det(A[e[j],i]) = (—1)**(i+j) * det(A[ji]) by Laplace expansion down the ith column.
+So that, m[ij] = (-1)**(i+j) * det(A[ji]) / det(A).
+
+Theorem 6.3.9 Adjoint and inverse of a matrix
+For an invertible n*n matrix A. The classical adjoint adj(A) is the n*n matrix whose ijth entry is (—1)**(i+j) * det(A[ji]). Then A`=adj(A)/det(A).
+
+
