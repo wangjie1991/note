@@ -1,5 +1,50 @@
-                  Chapter 6 Eigenvalues and Eigenvectors
+                  Chapter 7 Eigenvalues and Eigenvectors
 
 7.1 Dynamical Systems and Eigenvectors: An Introductory Example
+
+Definition 7.1.1  Eigenvectors and eigenvalues
+Consider an n*n matrix A. A nonzero vector v in R[n] is called an eigenvector of A if Av is a scalar multiple of v, that is Av = λv for some scalar λ. Note that this scalar λ may be zero.
+The scalar λ is called the eigenvalue associated with the eigenvector v.
+A nonzero vector v is an eigenvector of A if the vectors v and Av are parallel.
+
+Theorem 7.1.2
+The possible real eigenvalues of an orthogonal matrix are 1 and —1.
+
+
+Dynamical Systems and Eigenvectors
+
+Consider a physical system whose state at any given time t is described by some quantities x[1](t),x[2](t),...,x[n](t). We can represent the quantities x[1](t),x[2](t),...,x[n](t) by the state vector x(t) = [x[1](t) x[2](t) ... x[n](t)].
+
+Suppose that the state of the system at time t+1 is determined by the state 
+at time t and that the transformation of the system from time t to time t+1 
+is linear, represented by an n*n matrix A:x(t+1)=Ax(t). Then x(t)=(A**t)x0.
+Such a system is called a discrete linear dynamical system.
+
+Theorem 7.1.3 Discrete dynamical systems
+Consider the dynamical system x(t+1) = Ax(t) with x(0) = x0, then 
+      x(t) = (A**t)x0.
+Suppose we can find a basis v[1],v[2],...,v[n] of R[n] consisting of 
+eigenvectors of A, with Av[1] = λ[1]v[1],Av[2] = λ[2]v[2],...,Av[n] = 
+λv[n]. Find the coordinates c[1],c[2],...,c[n] of vector x0 with respect to 
+basis v[1],v[2],...,v[n]: x0 = c[1]v[1] + c[2]v[2] + ... + c[n]v[n]. Then 
+x(t) = c[1](λ[1]**t)v[1] + c[2](λ[2]**t)v[2] + ... + c[n](λ[n]**t)v[n]
+
+Definition 7.1.4  Discrete trajectories and phase portraits
+The endpoints of state vectors x(0)=x0, x(1)=Ax0, x(2)=(A**2)x0,... form the (discrete) trajectory of this system.
+A (discrete) phase portrait of the system x(t+1)=Ax(t) shows trajectories for various initial states.
+
+SUMMARY 7.1.5 Various characterizations of invertible matrices
+For an n*n matrix A, the following statements are equivalent.
+01. A is invertible.
+02. The linear system Ax = b has a unique solution x , for all b in R[n].
+03. rref(A) = I[n].
+04. rank(A) = n.
+05. im(A) = R[n].
+06. ker(A) = {0}.
+07. The column vectors of A form a basis of R[n].
+08. The column vectors of A span R[n].
+09. The column vectors of A are linearly independent.
+10. det(A) != 0.
+11. 0 fails to be an eigenvalue of A.
 
 

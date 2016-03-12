@@ -1,0 +1,41 @@
+                  Chapter 7 Eigenvalues and Eigenvectors
+
+7.2 Finding the Eigenvalues of a Matrix
+
+By Definition 7.1.1, λ is an eigenvalue of A if there exists a nonzero vector v in R[n] such that:
+Av = λv ==> Av - λv = 0 ==> Av - λI[n]v = 0 ==> (A - λI[n])v = 0 ==> 
+ker(A - λI[n]) != {0} ==> A - λI[n] is non-invertible ==> det(A - λI[n]) = 0
+
+Theorem 7.2.1 Eigenvalues and determinants; characteristic equation
+Consider an n*n matrix A and a scalar λ. Then λ is an eigenvalue of A if (and only if) det(A - λI[n]) = 0. This is called the characteristic equation (or the secular equation) of matrix A.
+
+Theorem 7.2.2 Eigenvalues of a triangular matrix
+The eigenvalues of a triangular matrix are its diagonal entries.
+
+Definition 7.2.3  Trace
+The sum of the diagonal entries of a square matrix A is called the trace of A, denoted by tr A.
+
+Theorem 7.2.4 Characteristic equation of a 2*2 matrix A
+det(A - λI[2]) = λ**2 - (tr A)λ + det A = 0
+det(A — λI[3]) = -(λ**3) + tr(A)(λ**2) - cλ + det(A) = 0, for some scalar c.
+
+Theorem 7.2.5 Characteristic polynomial
+If A is an n*n matrix, then det(A - λI[n]) is a polynomial of degree n, of the form:
+(-λ)**n + (tr A)(-λ)**(n-1) + ... + det A = 
+((-l)**n)(λ**n) + ((-l)**(n-1))(tr A)(λ**(n-1)) + ... + det A.
+This is called the characteristic polynomial of A, denoted by f[A](λ).
+
+Definition 7.2.6  Algebraic multiplicity of an eigenvalue
+We say that an eigenvalue λ0 of a square matrix A has algebraic multiplicity k if λ0 is a root of multiplicity k of the characteristic polynomial f[A](λ), meaning that we can write f[A](λ) = ((λ0 - λ)**k)g(λ) for some polynomial g(λ) with g(λ0) != 0.
+
+Theorem 7.2.7 Number of eigenvalues
+An n*n matrix has at most n real eigenvalues.
+If n is odd, then an n*n matrix has at least one real eigenvalue. (By the intermediate value theorem, lim[λ->οο]{f[A](λ)} = -oo and lim[λ->-οο]{f[A](λ)} = oo)
+If n is even, an n*n matrix A need not have any real eigenvalues.
+
+Theorem 7.2.8 Eigenvalues, determinant, and trace
+If an n*n matrix A has the eigenvalues λ[1],λ[2],...,λ[n] listed with their algebraic multiplicities, then:
+  det A = λ[1]*λ[2]*...*λ[n], the product of the eigenvalues
+  tr A = λ[1]+λ[2]+...+λ[n], the sum of the eigenvalues
+
+

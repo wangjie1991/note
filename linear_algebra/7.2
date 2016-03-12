@@ -1,0 +1,20 @@
+                  Chapter 7 Eigenvalues and Eigenvectors
+
+7.3 Finding the Eigenvectors of a Matrix
+
+Definition 7.3.1  Eigenspaces
+Consider an eigenvalue λ of an n*n matrix A. Then the kernel of the matrix A-λI[n] is called the eigenspace associated with λ, denoted by E[λ]:
+    E[λ] = ker(A - λI[n]) = {v in R[n]: Av = λv}.
+The eigenvectors with eigenvalue λ are the nonzero vectors.
+
+Definition 7.3.2  Geometric multiplicity
+Consider an eigenvalue λ of an n*n matrix A. The dimension of eigenspace E[λ] = ker(A - λI[n]) is called the geometric multiplicity of eigenvalue λ. Thus, the geometric multiplicity is the nullity of matrix A - λI[n], or n - rank(A - λI[n]).
+
+Definition 7.3.3  Eigenbasis
+Consider an n*n matrix A. A basis of R[n] consisting of eigenvectors of A is called an eigenbasis for A.
+
+a. For which square matrices does there exist an eigenbasis?
+b. If eigenbases exist, how can we find one?
+
+Theorem 7.3.4 Eigenbases and geometric multiplicities
+a. Consider an n*n matrix A. If we find a basis of each eigenspace of A and concatenate all these bases, then the resulting eigenvectors v\ ........vs will be linearly independent. (Note that s is the sum of the geometric multiplicities of the eigenvalues of A.)
