@@ -1,0 +1,44 @@
+                  Chapter 7 Eigenvalues and Eigenvectors
+
+7.5 Complex Eigenvalues
+
+Complex Numbers: A Brief Review
+
+A complex number can be expressed as z = a + ib.
+Addition : (a + ib) + (c + id) = (a + c) + i(b + d).
+Multiplication : (a + ib)(c + id) = (ac - bd) + i(ad + bc).
+
+If z = a + ib is a complex number, then a is real part (denoted by Re(z)) and b is imaginary part (denoted by Im(z)). A complex number of the form ib (with a = 0) is called imaginary. The set of all complex numbers is denoted by C.
+
+The conjugate of a complex number z = a + ib is defined by ~z = a — ib (The sign of the imaginary part is reversed). We say that z and ~z form a conjugate pair of complex numbers.
+
+For a complex number in polar coordinates, the length r of the vector is called the modulus of z, denoted by |z|. The angle θ is called an argument of z. Note that the argument is determined only up to a multiple of 2π.
+
+If z is a complex number with modulus r and argument θ, we can write z as
+z = r(cosθ) + ir(sinθ) = r(cosθ + isinθ).
+The representation z = r(cosθ + isinθ) is called the polar form of the complex number z.
+
+In general, if z = r(cosα + isinα) and w = s(cosβ + isinβ), then
+zw = rs(cos(α + β) + isin(α + β))
+|zw| = |z||w|
+arg(zw) = arg z + arg w (modulo 2π).
+
+Theorem 7.5.1 De Moivre’s formula
+(cosθ + isinθ)**n = cos(nθ) + isin(nθ)
+z**n = (r**n)(cos(nθ) + isin(nθ))
+
+Theorem 7.5.2 Fundamental theorem of algebra
+Any polynomial p(λ) with complex coefficients can be written as a product of linear factors p(λ) = k(λ-λ[l])(λ-λ[2])...(λ-λ[n]), for some complex numbers λ[1],λ[2],...,λ[n] and k (The λ[i] need not be distinct).
+Therefore, a polynomial p(λ) of degree n has precisely n complex roots if they are properly counted with their multiplicities.
+
+The whole body of "core linear algebra":
+echelon form, linear transformation, kernel, image, linear independence, basis, dimension, coordinates, linear spaces, determinant, eigenvalues, eigenvectors, diagonalization.
+
+Theorem 7.5.3 Complex eigenvalues and rotation-scaling matrices
+If A is a real 2*2 matrix with eigenvalues a ± ib (where b != 0), and if v + iw is an eigenvector of A with eigenvalue a + ib, then A is similar to a rotation-scaling matrix.
+S`AS = [[a b] [-b a]], where S = [w v].
+
+Theorem 7.5.4
+A complex n*n matrix has n complex eigenvalues if they are counted with their algebraic multiplicities.
+
+

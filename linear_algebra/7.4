@@ -1,0 +1,56 @@
+                  Chapter 7 Eigenvalues and Eigenvectors
+
+7.4 Diagonalization
+
+Theorem 7.4.1 The matrix of a linear transformation 
+              with respect to an eigenbasis
+Consider a linear transformation T(x) = Ax, where A is a square matrix.
+Suppose B = (v[1],v[2],...,v[n]) is an eigenbasis for T, with
+Av[i]=λ[i]v[i]. Then the B-matrix D of T is 
+           | λ[1]  0        0   |
+D = S`AS = |  0   λ[2]      0   |  , where S = [v[1] v[2] ... v[n]]
+           | ...  ...      ...  |
+           |  0    0       λ[n] |
+Matrix D is diagonal, and its diagonal entries are the eigenvalues λ[1],...,λ[n] of T.
+
+Definition 7.4.2  Diagonalizable matrices
+An n*n matrix A is called diagonalizable if A is similar to some diagonal matrix D, that is, if there exists an invertible n*n matrix S such that S`AS is diagonal.
+
+Theorem 7.4.3 Eigenbases and diagonalization
+a.  Matrix A is diagonalizable if (and only if) there exists an eigenbasis for A.
+b.  If an n*n matrix A has n distinct eigenvalues, then A is diagonalizable.
+
+Theorem 7.4.4 Diagonalization
+Suppose we are asked to determine whether a given n*n matrix A is diagonalizable. If so, we wish to find an invertible matrix S such that S`AS is diagonal. We can proceed as follows.
+a.  Find the eigenvalues of A, that is, solve the characteristic equation 
+    f[A](λ) = det(A - λI[n]) = 0.
+b.  For each eigenvalue λ, find a basis of the eigenspace E[λ]=ker(A-λI[n]).
+c.  Matrix A is diagonalizable if (and only if) the dimensions of the
+    eigenspaces add up to n. In this case, we find an eigenbasis v[1], 
+    v[2],...,v[n] by concatenating the bases of the eigenspaces we found in 
+    step(b). Let S = [v[1] v[2] ... v[n]]. Then matrix S`AS = D is 
+    diagonal, and the ith diagonal entry of D is the eigenvalue λ[i].
+
+Theorem 7.4.5 Powers of a diagonalizable matrix
+To compute the powers A**t of a diagonalizable matrix A (where t is a positive integer), proceed as follows:
+Use Theorem 7.4.4 to diagonalize A, find an invertible S and a diagonal D such that S`AS = D. Then A = SDS` and A**t = S(D**t)S`.
+
+Definition 7.4.6  The eigenvalues of a linear transformation
+
+Consider a linear transformation T from V to V, where V is a linear space.  A scalar λ is called an eigenvalue of T if there exists a nonzero element f of V such that T(f) = λf. Such an f is called an eigenfunction if V consists of functions, an eigenmatrix if V consists of matrices, and so on. In theoretical work, the inclusive term eigenvector is often used for f.
+
+Now suppose that V is finite dimensional. Then a basis B of V consisting of eigenvectors of T is called an eigenbasis for T. We say that transformation T is diagonalizable if the matrix of T with respect to some basis is diagonal. Transformation T is diagonalizable if (and only if) there exists an eigenbasis for T.
+
+EXAMPLE 6 (P338)
+Consider the linear transformation D(f) = f'(the derivative). Show that all real numbers are eigenvalues of D. Hint: Apply D to exponential functions.
+
+EXAMPLE 7 (P338)
+Consider the linear transformation L(A) = A^(the transpose) from R[2*2] to R[2*2]. Is transformation L diagonalizable? If so, find an eigenbasis for L. Hint: Consider symmetric and skew-symmetric matrices.
+
+EXAMPLE 8 (P338)
+Consider the linear transformation T(f(x)) = f(2x-1) from P[2] to P[2]. Is transformation T diagonalizable? If so, find an eigenbasis B and the B-matrix D of T.
+
+EXAMPLE 9 (P340)
+Let V be the space of all infinite sequences of real numbers. We define the linear transformation T(x0,x1,x2,...) = (x1,x2,x3,...) from V to V. Find all the eigenvalues and eigensequences of T.
+
+
