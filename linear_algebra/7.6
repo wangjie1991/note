@@ -1,3 +1,24 @@
                   Chapter 7 Eigenvalues and Eigenvectors
 
 7.5 Stability
+
+Definition 7.6.1  Stable equilibrium
+Consider a dynamical system x(t+1) = Ax(t). We say that vector 0 is an (asymptotically) stable equilibrium for this system if lim[t->oo](x(t)) = 0 for all its trajectories.
+Note that the zero state is stable if (and only if) lim[t->oo](A**t) = 0 (meaning that all entries of A* approach zero).
+
+Theorem 7.6.2 Stability and Eigenvalues
+Consider a dynamical system x(t+1) = Ax(t). The zero state is asymptotically stable if (and only if) the modulus of all the complex eigenvalues of A is less than 1.
+
+EXAMPLE 2
+Consider the dynamical system x(t+1) = [[p q] [-q p]]x(t), where p and q are real, and q is nonzero. Examine the stability of this system. 
+Solution
+x(t) = (r**t)[[cos(θt) sin(θt)] [-sin(θt) cos(θt)]]x(0).
+
+Theorem 7.6.3 Dynamical systems with complex eigenvalues
+Consider the dynamical system x(t+1) = Ax(t), where A is a real 2*2 matrix with eigenvalues λ[1,2] = p ± iq = r(cosθ ± isinθ), where q != 0.
+Let v + iw be an eigenvector of A with eigenvalue p + iq. Then
+x(t) = (r**t)S |cos(θt) -sin(θt)| S`x0, where S = [w v].
+               |sin(θt)  cos(θt)|
+Note that S`x0 is the coordinate vector of x0 with respect to basis w,v.
+
+

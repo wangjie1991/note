@@ -1,0 +1,44 @@
+            Chapter 8 Symmetric Matrices and Quadratic Forms
+
+8.2 Quadratic Forms
+
+Definition 8.2.1  Quadratic forms
+A function q(x[1],x[2],...,x[n]) from R[n] to R is called a quadratic form if it is a linear combination of functions of the form x[i]x[j] (where i and j may be equal). A quadratic form can be written as
+q(x) = x.Ax = x^Ax
+for a unique symmetric n*n matrix A, called the matrix of q.
+
+Theorem 8.2.2 Diagonalizing a quadratic form
+Consider a quadratic form q(x) = x^Ax, where A is a symmetric n*n matrix. Let B be an orthonormal eigenbasis for A, with associated eigenvalues λ[1],λ[2],...,λ[n]. Then
+q(x) = λ[1](c[1]**2) + λ[2](c[2]**2) + ... + λ[n](c[n]**2)
+where the c[i] are the coordinates of x with respect to B.
+
+Definition 8.2.3  Definiteness of a quadratic form
+Consider a quadratic form q(x) = x^Ax, where A is a symmetric n*n matrix.
+We say that A is positive definite if q(x) is positive for all nonzero x in R[n], and we call A positive semidefinite if q(x)>=0, for all x in R[n].
+Negative definite and negative semidefinite symmetric matrices are defined analogously.
+Finally, we call A indefinite if q takes positive as well as negative values.
+
+EXAMPLE 3
+Consider an n*m matrix A. Show that the function q(x) = #Ax#**2 is a quadratic form, find its matrix, and determine its definiteness.
+Solution:
+q(x) = (Ax)^(Ax) = x^A^Ax = x^(A^Ax)
+
+Theorem 8.2.4 Eigenvalues and definiteness
+A symmetric matrix A is positive definite if (and only if) all of its eigenvalues are positive. The matrix A is positive semidefinite if (and only if) all of its eigenvalues are positive or zero.
+The determinant of a positive definite matrix is positive, since the determinant is the product of the eigenvalues.
+
+Theorem 8.2.5 Principal submatrices and definiteness
+Consider a symmetric n*n matrix A. For m = 1,...,n. let A(m) be the m*m matrix obtained by omitting all rows and columns of A past the mth. These matrices A(m) are called the principal submatrices of A.
+The matrix A is positive definite if (and only if) det(A(m)) > 0, for all
+m = 1,...,n.
+
+Definition 8.2.6  Principal axes
+Consider a quadratic form q(x) = x^Ax, where A is a symmetric n*n matrix with n distinct eigenvalues. Then the eigenspaces of A are called the principal axes of q.
+
+Theorem 8.2.7 Ellipses and hyperbolas
+Consider the curve C in R[2] defined by
+q(x1,x2) = a(x1)**2 + b(x1)(x2) + c(x2)**2 = 1
+Let λ1 and λ2 be the eigenvalues of the matrix [[a b/2] [b/2 c]] of q.
+If both λ1 and λ2 are positive, then C is an ellipse. If one eigenvalue is positive and the other is negative, then C is a hyperbola.
+
+

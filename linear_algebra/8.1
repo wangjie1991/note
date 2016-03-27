@@ -1,0 +1,46 @@
+            Chapter 8 Symmetric Matrices and Quadratic Forms
+
+8.1 Symmetric Matrices
+In last chapter the central question is: When is a given square matrix A diagonalizable?
+In this chapter the central question is: Which matrices are orthogonally diagonalizable?
+
+Theorem 8.1.1 Spectral theorem
+A matrix A is orthogonally diagonalizable (there exists an orthogonal S such that S`AS = S^AS is diagonal) if and only if A is symmetric (A^ = A).
+(S`AS = D , A = SDS` = SDS^ , A^ = (SDS^)^ = SD^S^ = SDS` = A)
+
+Theorem 8.1.2
+Consider a symmetric matrix A. If v[1] and v[2] are eigenvectors of A with distinct eigenvalues λ[1] and λ[2], then v[1].v[2] = 0, v[2] is orthogonal to v[1].
+
+Proof:
+v[1]^Av[2] = v[1]^λ[2]v[2] = λ[2](v[1].v[2])
+v[1]^Av[2] = v[1]^A^v[2] = (Av[1])^v[2] = (λ[1]v[1])^v[2] = λ[1](v[1].v[2])
+==> λ[2](v[1].v[2]) = λ[1](v[1].v[2]) ==> (λ[1]-λ[2])(v[1].v[2]) = 0
+==> v[1].v[2] = 0.
+
+Theorem 8.1.3
+A symmetric n*n matrix A has n real eigenvalues if they are counted with their algebraic multiplicities.
+
+Proof1:
+By Theorem 7.5.4, we need to show that all the complex eigenvalues of matrix A are in fact real. ==>
+Consider two complex conjugate eigenvalues p ± iq of A with corresponding eigenvectors v ± iw. ==>
+We need to show that q = 0.
+(v + iw)^A(v — iw) = (v + iw)^(p - iq)(v — iw) = (p - iq)(v + iw)^(v - iw) = (p - iq)(#v#**2 + #w#**2)
+(v + iw)^A(v — iw) = (v + iw)^A^(v — iw) = (A(v + iw))^(v - iw) = (p + iq)(v + iw)^(v - iw) = (p + iq)(#v#**2 + #w#**2)
+==> p + iq = p - iq ==> q = 0.
+
+Proof2(induction):
+For a 1*1 matrix A, we can let S = [1].
+Assume that the claim is true for n — 1, show it holds for n.
+Pick a real eigenvalue λ of A, and choose an eigenvector v[1] of length 1 for λ. We can find an orthonormal basis v[1],v[2],...,v[n] of R[n].
+P = [v[1] v[2]   v[n]], then the first column of P`AP is λe and P`AP = P^AP = (P^A^P)^ = (P`AP)^, so P`AP = [[λ 0] [0 B]], where B is a symmetric (n-1)*(n-1) matrix.
+By induction hypothesis, B is orthogonally diagonalizable. Then there exists an orthogonal (n-1)*(n-1) matrix Q such that Q`BQ = D is a diagonal (n-1)*(n-1) matrix.
+Introduce the orthogonal n*n matrix R = [[1 0] [0 Q]], Then R`P`APR = 
+[[1 0] [0 Q`]]*[[λ 0] [0 B]]*[[1 0] [0 Q]] = [[λ 0] [0 D]].
+S = RP, so S`AS = [[λ 0] [0 D]].
+
+Theorem 8.1.4 Orthogonal diagonalization of a symmetric matrix A
+a. Find the eigenvalues of A, and find a basis of each eigenspace.
+b. Using the Gram-Schmidt process, find an orthonormal basis of each eigenspace.
+c. Form an orthonormal eigenbasis v[1],v[2],...,v[n] for A by concatenating the orthonormal bases you found in part (b), and let S = [v[1] v[2]  v[n]]. S is orthogonal, and S`AS will be diagonal.
+
+
