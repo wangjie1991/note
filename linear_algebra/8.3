@@ -2,3 +2,37 @@
 
 8.3 Singular Values
 
+EXAMPLE 1
+If L(x)=Ax is a linear transformation from R[2] to R[2], then there exist two orthogonal unit vectors v1 and v2 in R[2] such that vectors L(v1) and L(v2) are orthogonal.
+
+A^A is symmetric. According to the spectral theorem (Theorem 8.1.1), there exists an orthonormal eigenbasis v1,v2 for A^A, with associated eigenvalues λ1, λ2. So that vectors L(v1)=Av1 and L(v2)=Av2 are orthogonal.
+(Av1).(Av2) = (Av1)^(Av2) = v1^A^Av2 = v1^(λ2v2) = λ2(v1.v2) = 0.
+It is worth mentioning that v1 and v2 need not be eigenvectors of matrix A.
+
+Definition 8.3.1  Singular values
+The singular values of an n*m matrix A are the square roots of the eigenvalues of the symmetric m*m matrix A^A, listed with their algebraic multiplicities. It is customary to denote the singular values by σ1, σ2, ..., σm and to list them in decreasing order:
+  σ1 >= σ2 >= ... >= σm >= 0
+
+EXAMPLE 2
+Consider the linear transformation L(x) = Ax. Show that the image of the unit circle under transformation L is an ellipse.
+
+The unit circle consists of the vectors of the form x = cos(t)v1 + sin(t)v2, and the image of the unit circle consists of the vectors L(x) = cos(t)L(v1) + sin(t)L(v2). This image is the ellipse whose semimajor and semiminor axes are L(v1) and L(v2).
+
+Theorem 8.3.2 The image of the unit circle
+Let L(x) = Ax be an invertible linear transformation from R[2] to R[2]. The image of the unit circle under L is an ellipse E. The lengths of the semimajor and the semiminor axes of E are the singular values σ1 and σ2.
+
+Theorem 8.3.3
+Let L(x) = Ax be a linear transformation from R[m] to R[n]. Then there exists an orthonormal basis v[1],v[2],...,v[m] of R[m] such that:
+a. Vectors L(v[1]), L(v[2]), ..., L(v[m]) are orthogonal.
+b. The lengths of vectors L(v[1]), L(v[2]), ..., L(v[m]) are the singular values σ1, σ2, ..., σm of matrix A.
+
+To construct v\, i>2, . . . , 5m, find an orthonormal eigenbasis for matrix A 7 A. Make
+sure that the corresponding eigenvalues k \ , A2, . . . , km appear in descending order:
+^1 > A.2 > • • • > km > 0 ,
+so that ki = or? for / = 1, . . . , m. ■
+The proof is analogous to the special case n = m = 2 considered in Examples 1
+and 2 :
+a. L(dj) • L(vj) = (Avj) • (Avj) = (A5,)r A5;- = v7A 7Avj = 5/* (kjVj)
+= A-y (Sf- • 5; ) = 0 when i ^ j , and
+b. || £.(?,) ||2 = (AD,) • (Au,-) = S/A^AS,- = v f (XiVi) = k, ( i , • 5,) = k t = af ,
+so that ||L(S,)|| = ct,-.
