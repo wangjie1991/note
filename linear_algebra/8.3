@@ -26,13 +26,19 @@ Let L(x) = Ax be a linear transformation from R[m] to R[n]. Then there exists an
 a. Vectors L(v[1]), L(v[2]), ..., L(v[m]) are orthogonal.
 b. The lengths of vectors L(v[1]), L(v[2]), ..., L(v[m]) are the singular values σ1, σ2, ..., σm of matrix A.
 
-To construct v\, i>2, . . . , 5m, find an orthonormal eigenbasis for matrix A 7 A. Make
-sure that the corresponding eigenvalues k \ , A2, . . . , km appear in descending order:
-^1 > A.2 > • • • > km > 0 ,
-so that ki = or? for / = 1, . . . , m. ■
-The proof is analogous to the special case n = m = 2 considered in Examples 1
-and 2 :
-a. L(dj) • L(vj) = (Avj) • (Avj) = (A5,)r A5;- = v7A 7Avj = 5/* (kjVj)
-= A-y (Sf- • 5; ) = 0 when i ^ j , and
-b. || £.(?,) ||2 = (AD,) • (Au,-) = S/A^AS,- = v f (XiVi) = k, ( i , • 5,) = k t = af ,
-so that ||L(S,)|| = ct,-.
+To construct eigenbasis v[1],v[2],...,v[m] for matrix A^A. The corresponding eigenvalues λ[1],λ[2],...,λ[m] appear in descending order. So that λ[i]=(σ[i])**2 for i = 1,...,m.
+a. L(v[i]).L(v[j]) = (Av[i]).(Av[j]) = (Av[i])^(Av[j]) = v[i]^A^Av[j] = v[i]^(λ[j]v[j]) = λ[j](v[i]^v[j]) = 0, when i != j.
+b. #L(v[i])#**2 = (Av[i]).(Av[i]) = v[i]^A^Av[i] = v[i]^(λ[i]v[i]) = λ[i](v[i]^v[i]) = λ[i] = σ[i]**2.
+
+The unit sphere in R[3] consists of all vectors of the form x = c[1]v[1] + c[2]v[2] + c[3]v[3], where c[1]**2 + c[2]**2 + c[3]**2 = 1.
+
+Suppose the singular values σ[1],σ[2],...,σ[s] of an n*m matrix A are nonzero, while σ[s+1],...,σ[m] are zero. Choose vectors v[1],...,v[s],v[s+1],...,v[m] for A. Note that #Av[i]# = σ[i] = 0 and therefore Av[i] = 0 for i = s+1,...,m. We claim that the vectors Av[1],...Av[s] form a basis of the image of A. 
+
+Theorem 8.3.4 Singular values and rank
+If A is an n*m matrix of rank r, then the singular values σ[1],...,σ[r] are nonzero, while σ[r+1],...,σ[m] are zero.
+
+The Singular Value Decomposition
+Consider a linear transformation L(x) = Ax from R[m] to R[n], and choose an orthonormal basis v[1],...,v[m] of R[m]. Let r = rank(A). We know that the vectors Av[1],...,Av[r] are orthogonal and nonzero, with #Av[i]# = σ[i].
+We introduce the unit vectors 
+
+Theorem 8.3.5 Singular value decomposition (SVD)
