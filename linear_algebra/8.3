@@ -38,7 +38,27 @@ Theorem 8.3.4 Singular values and rank
 If A is an n*m matrix of rank r, then the singular values σ[1],...,σ[r] are nonzero, while σ[r+1],...,σ[m] are zero.
 
 The Singular Value Decomposition
-Consider a linear transformation L(x) = Ax from R[m] to R[n], and choose an orthonormal basis v[1],...,v[m] of R[m]. Let r = rank(A). We know that the vectors Av[1],...,Av[r] are orthogonal and nonzero, with #Av[i]# = σ[i].
-We introduce the unit vectors 
+Consider a linear transformation L(x) = Ax from R[m] to R[n], and choose an orthonormal basis v[1],...,v[m] of R[m]. Let r = rank(A).
+The vectors Av[1],...,Av[r] are orthogonal and nonzero, with #Av[i]# = σ[i].
+Introduce the unit vectors u[1] = Av[1]/σ[1], ... , u[r] = Av[r]/σ[r].
+Expand the sequence u[1],...,u[r] to an orthonormal basis u[1],...,u[n] of R[n].
+Then Av[i]=σ[i]u[i] for i=1,...,r and Av[i]=0 for i=r+1,...,m.
+V = [v[1] ... v[m]], then
+AV = A[v[1] ... v[m]] = [σ[1]u[1] ... σ[r]u[r] 0 ... 0]
+   = [u[1] ... u[r] 0 ... 0] *         |σ[1]    0       0 |
+   = [u[1] ... u[r] u[r+1] ... u[n]] * |    ...           |
+                                       |0       σ[r]    0 |
+                                       |            ...   |
+                                       |0       0       0 |n*m
+   = UΣ
+
+Note that V is an orthogonal m*m matrix, U is an orthogonal n*n matrix, and Σ is an n*m matrix whose first r diagonal entries are σ[1],...,σ[r] and all other entries are zero.
+Multiplying the equation AV=UΣ with V^ from the right, we find that A=UΣV^.
 
 Theorem 8.3.5 Singular value decomposition (SVD)
+Any n*m matrix A can be written as A = UΣV^. U is an orthogonal n*n matrix. V is an orthogonal m*m matrix. Σ is an n*m matrix whose first r diagonal entries are the nonzero singular values σ[1],...,σ[r] of A, and all other entries are zero [where r = rank(A)].
+The singular value decomposition can be written as
+A = σ[1]u[1]v[1]^ + ... + σ[r]u[r]v[r]^.
+where the u[i] and the v[i] are the columns of U and V.
+
+
