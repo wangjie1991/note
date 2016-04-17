@@ -5,4 +5,32 @@
 Theorem 9.1.1 Exponential growth and decay
 Consider the linear differential equation dx/dt = kx, with initial value x[0] (k is an arbitrary constant). The solution is x(t) = (e**(kt))x[0].
 
+Consider a dynamical system with state vector x(t) and components x[1](t),...,x[n](t).
+In the discrete approach, x(t+1) = Ax(t), or x(t+1) = (A**t)x(0).
+In the continuous approach, we model the derivatives of the components of the state vector x(t), or dx[1]/dt, dx[2]/dt, ..., dx[n]/dt.
+If these rates depend linearly on x[1],...,x[n], then
+| dx[1]/dt = a[11]x[1] + a[12]x[2] + ... + a[1n]x[n]  |
+| dx[2]/dt = a[21]x[1] + a[22]x[2] + ... + a[2n]x[n]  |
+| ...                                                 |
+| dx[n]/dt = a[n1]x[1] + a[n2]x[2] + ... + a[nn]x[n]  |
+
+In matrix form, dx/dt = Ax.
+dx/dt = [dx[1]/dt dx[2]/dt ... dx[n]/dt].
+A = [[a[11] a[21] ... a[n1]] ... [a[1n] a[2n] ... a[nn]]].
+
+Theorem 9.1.2 Linear dynamical systems: discrete versus continuous
+A linear dynamical system can be modeled by
+  x(t+1) = Bx(t) (discrete model),
+or
+  dx/dt = Ax  (continuous model).
+
+Theorem 9.1.3 Continuous dynamical systems
+Consider the system dx/dt = Ax. Suppose there is a real eigenbasis v[1],...,v[n] for A, with associated eigenvalues λ[1],...,λ[n]. Then the general solution of the system is
+  x(t) = c[1]e**(λ[1]t)v[1] + ... + c[n]e**(λ[n]t)v[n].
+The scalars c[1],c[2],...,c[n] are the coordinates of x[0] with respect to the basis v[1],v[2],...,v[n].
+                          |e**(λ[1]t)           0     |
+x(t) = [v[1] ... v[n]] *  |0          ...       0     | * [c[1] ... c[n]].
+                          |0              e**(λ[n]t)  |
+     = SΣS`x[0].
+
 
