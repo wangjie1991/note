@@ -1,0 +1,58 @@
+                    Chapter 9 Linear Differential Equations
+
+9.2 The Complex Case: Euler’s Formula
+
+Complex-Valued Functions
+A complex-valued function z = f(t) is a function from R to C (with domain R and target space C): The input t is real, and the output z is complex. We can write z(f) in terms of its real and imaginary parts:
+                              z(t) = x(t) + iy(t).
+If x(t) and y(t) are differentiable real-valued functions, then the derivative of the complex-valued function z(t) is defined by
+                           dz/dt = dx/dt + i(dy/dt).
+If z(t) = cost + isint, then dz/dt = -sint + icost.
+
+Definition 9.2.1  Complex exponential functions
+If λ is a complex number, then z = e**(λt) is the unique complex-valued function such that dz/dt = λz and z(0) = 1.
+
+consider the simplest case, z = e**(it), where λ = i. We are looking for a complex-valued function z(t) such that dz/dt = iz and z(0) = 1.
+The unit circle, with parameterization z(t) = cost + isint, satisfies
+dz/dt = -sint + icost = iz(t), and z(0) = 1.
+
+Theorem 9.2.2 Euler’s formula
+                            e**(it) = cost + isint.
+
+The polar form of a complex number is z = r(cosθ + isinθ) = re**(iθ).
+Consider z = e**(λt), where λ is an arbitrary complex number, λ = p + iq. Then e**(λt) = e**((p+iq)t) = e**(pt)e**(iqt) = e**(pt)(cos(qt) + isin(qt)). 
+
+EXAMPLE 2
+For which complex numbers λ is lim[t->oo](e**(λt)) = 0?
+Solution: e**(λt) = e**(pt)(cos(qt) + isin(qt)), So lim[t->oo](e**(λt)) = 0 if (and only if) the real part of λ is negative.
+
+Theorem 9.2.3 Continuous dynamical systems with complex eigenvalues
+Consider a linear system dx/dt = Ax. Suppose there exists a complex eigenbasis v[1],...,v[n] for A, with associated complex eigenvalues λ[1],...,λ[n]. Then the general complex solution of the system is
+              x(t) = c[1]e**(λ[1]t)v[1] + ... + c[n]e**(λ[n]t)v[n]
+where the c[i] are arbitrary complex numbers.
+
+dx/dt = c[1]λ[1]e**(λ[1]t)v[1] + ... + c[n]λ[n]e**(λ[n]t)v[n].
+Ax = c[1]e**(λ[1]t)λ[1]v[1] + ... + c[n]e**(λ[n]t)λ[n]v[n].
+
+Theorem 9.2.4 Stability of a continuous dynamical system
+For a system dx/dt = Ax, the zero state is an asymptotically stable equilibrium solution if (and only if) the real parts of all eigenvalues of A are negative.
+
+Theorem 9.2.5 Determinant, trace, and stability
+Consider the system dx/dt = Ax, where A is a real 2*2 matrix. Then the zero state is an asymptotically stable equilibrium solution if (and only if) tr(A) < 0 and det(A) > 0.
+
+consider the system dx/dt = Ax, where A is a real 2*2 matrix with eigenvalues λ[1,2] = p ± iq (where q != 0) and corresponding eigenvectors v[1,2] = v ± iw. P = [v+iw v-iw], Then
+x(t) = P[[e**(λ[1]t) 0] [0 e**(λ[2]t)]]P`x[0]
+     = P[[e**((p+iq)t) 0] [0 e**((p-iq)t)]]P`x[0]
+     = e**(pt)P[[cos(qt)+isin(qt) 0] [0 cos(qt)-isin(qt)]]P`x[0]
+[[cos(qt)+isin(qt) 0] [0 cos(qt)-isin(qt)]] = 
+R`[[cos(qt) sin(qt)] [-sin(qt) cos(qt)]]R, where R = [[i 1] [-i 1]].
+Thus, x(t) = e**(pt)PR`[[cos(qt) sin(qt)] [-sin(qt) cos(qt)]]RP`x[0]
+           = e**(pt)S[[cos(qt) sin(qt)] [-sin(qt) cos(qt)]]S`x[0]
+where S = PR` = [w v]. 
+
+Theorem 9.2.6 Continuous dynamical systems with eigenvalues p ± iq
+Consider the linear system dx/dt = Ax, where A is a real 2*2 matrix with complex eigenvalues p ± iq (and q != 0). Consider an eigenvector v + iw with eigenvalue p + iq. Then
+x(t) = e**(pt)S[[cos(qt) sin(qt)] [-sin(qt) cos(qt)]]S`x[0], where S=[w v].
+The trajectories are either ellipses (linearly distorted circles) if p = 0,or spirals, spiraling outward if p is positive and inward if p is negative. In the case of an ellipse, the trajectories have a period of 2n/q.
+
+
