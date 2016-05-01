@@ -1,0 +1,99 @@
+                                   Namespaces
+1.Composition Problems
+2.Namespaces
+    Explicit Qualification
+    using-Declarations
+    using-Directives
+    Argument-Dependent Lookup
+    Namespaces Are Open
+3.Modularization and Interfaces
+    Namespaces as Modules
+    Implementations
+    Interfaces and Implementations
+4.Composition Using Namespaces
+    Convenience vs. Safety
+    Namespace Aliases
+    Namespace Composition
+    Composition and Selection
+    Namespaces and Overloading
+    Versioning
+    Nested Namespaces
+    Unnamed Namespaces
+    C Headers
+5.Advice
+
+
+14.1  Composition Problems
+C++ does not provide a single language feature supporting the notion of a module; there is no module construct. Instead, modularity is expressed through combinations of other language facilities, such as functions, classes, and namespaces, and source code organization.
+
+A namespace is a (named) scope. You can access members defined earlier in a namespace from later declarations, but you cannot (without special effort) refer to members from outside the namespace.
+
+To refer to members of a namespace, we can use its fully qualified name. Other ways of referring to members from outside their namespace are using-declarations (14.2.2), using-directives (14.2.3), and argument-dependent lookup (14.2.4).
+
+
+14.2  Namespaces
+The notion of a namespace is provided to directly represent the notion of a set of facilities that directly belong together, for example, the code of a library.
+
+14.2.1 Explicit Qualification
+A member can be declared within a namespace definition and defined later using the namespacename::member-name notation.
+
+Members of a namespace must be introduced using this notation:
+  namespace namespace−name {
+    // declaration and definitions
+  }
+For example:
+  namespace Parser {
+    double expr(bool); // declaration
+    double term(bool);
+    double prim(bool);
+  }
+  double val = Parser::expr(); // use
+  double Parser::expr(bool b) // definition
+  {
+    // ...
+  }
+
+The global scope is a namespace and can be explicitly referred to using ::.
+
+14.2.2 using-Declarations
+To alleviate that we can use a using-declaration to say that in this code string means std::string:
+  using std::string; // use "str ing" to mean "std::str ing"
+
+A using-declaration introduces a synonym(同义词) into a scope. It is usually a good idea to keep local synonyms as local as possible to avoid confusion.
+  void g()
+  {
+    using N::f;
+    f(789); //N::f(int)
+  }
+
+14.2.3 using-Directives
+We can use a using-directive to request that every name from a namespace be accessible in our scope without qualification. For example:
+  using namespace std; // make every name from std accessible
+
+A using-directive makes names from a namespace available almost as if they had been declared outside their namespace (see also §14.4). Using a using-directive to make names from a frequently used and well-known library available without qualification is a popular technique for simplifying code.
+
+Within a function, a using-directive can be safely used as a notational convenience, but care should be taken with global using-directives because overuse can lead to exactly the name clashes that namespaces were introduced to avoid. For example:
+  using namespace Graph_lib;
+  using namespace Text_lib;
+  Glyph gl; // Te xt_lib::Glyph
+  vector<Shape∗> vs; // Graph_lib::Shape
+
+In particular, we can use names that do not clash. However, name clashes now occur as soon as we use one of the names that clash – exactly as if we had not used namespaces.
+
+Consequently, we must be careful with using-directives in the global scope. In particular, don’t place a using-directive in the global scope in a header file except in very specialized circumstances (e.g., to aid transition) because you never know where a header might be #included.
+
+14.2.4 Argument-Dependent Lookup
+A function taking an argument of user-defined type X is more often than not defined in the same namespace as X. Consequently, if a function isn’t found in the context of its use, we look in the namespaces of its arguments.
+
+In the standard, the rules for argument-dependent lookup are phrased in terms of associated namespaces. Basically:
+• If an argument is a class member, the associated namespaces are the class itself (including its base classes) and the class’s enclosing namespaces.
+• If an argument is a member of a namespace, the associated namespaces are the enclosing namespaces.
+• If an argument is a built-in type, there are no associated namespaces.
+
+14.2.5 Namespaces Are Open
+A namespace is open; that is, you can add names to it from several separate namespace declarations.
+
+
+14.3  Modularization and Interfaces
+
+
