@@ -5,17 +5,44 @@
 A central concept in signal and system analysis is that of the transformation of a signal. In this section, we focus on a very limited but important class of elementary signal transformations that involve simple modification of the independent variable, the time axis.
 
 1.2.1   Examples of Transformations of the Independent Variable
-1. time shift.
+Time Shift
 
-2. time reversal.
+Time Reversal
 The signal x[-n] is obtained from the signal x[n] by a reflection about n=0.
 The signal x(-t) is obtained from the signal x(t) by a reflection about t=0.
 
-3. time scaling.
+Time Scaling
 x(t), x(2t), and x(t/2) are related by linear scale changes in the independent variable.
 
 If x(t) represents an audio tape recording, then x(-t) is the same tape recording played backward, x(2t) is that recording played at twice the speed, and x(t/2) is the recording played at half-speed.
 
 
 1.2.2   Periodic Signals
+A periodic continuous-time signal x(t) has the property that there is a positive value of T for which
+                             x(t) = x(t + T) (1.11)
+for all values of t. In other words, a periodic signal has the property that is unchanged by a time shift of T. We say that x(t) is periodic with period T.
+
+If x(t) is periodic with period T, then x(t) = x(t + mT) for all t and for any integer m. The fundamental period T0 of x(t) is the smallest positive value of T. This definition of the fundamental period works, except if x(t) is a constant. In this case the fundamental period is undefined. A signal x(t) that is not periodic will be referred to as an aperiodic signal.
+
+A discrete-time signal x[n] is periodic with period N, where N is a positive integer, if it is unchanged by a time shift of N, if
+                             x[n] = x[n + N] (1.12)
+for all values of n. The fundamental period N0 is the smallest positive value of N.
+
+Example 1.4
+The problem that whether or not a given signal is periodic.
+x(t) =  cos(t)  if t<0
+        sin(t)  if t≥0 
+
+
+1.2.3   Even and Odd Signals
+A signal x(t) or x[n] is referred to as an even signal if it is identical to its time-reversed counterpart, with its reflection about the origin.
+A continuous-time signal is even if x(-t) = x(t)    (1.14)
+A discrete-time signal is even if x[-n] = x[n]  (1.15)
+A signal is referred to as odd if x(-t) = -x(t) (1.16)
+                                  x[-n] = -x[n] (1.17)
+
+An important fact is that any signal can be broken into a sum of two signals, one of which is even and one of which is odd.
+Even part of x(t):  Ev{x(t)} = 1/2[x(t) + x(-t)]    (1.18)
+Odd part of x(t):   Od{x(t)} = 1/2[x(t) - x(-t)]    (1.19)
+
 
