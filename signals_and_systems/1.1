@@ -1,0 +1,34 @@
+                         Chapter 1 Signals And Systems 
+
+1.1 Continuous-Time and Discrete-Time Signals
+
+1.1.1 Examples and Mathematical Representation
+
+1.1.2 Signal Energy and Power
+The total energy over the time interval t1 ≤ t ≤ t2 in a continuous-time signal x(t) is defined as 
+                        ∫[t1,t2]{|x(t)|**2}dt.    (1.4)
+The time-averaged power is obtained by dividing eq.(1.4) by the length t2 - t1.
+
+The total energy in a discrete-time signal x[n] over the time interval n1 ≤ n ≤ n2 is defined as
+                         ∑[n=n1,n2]{|x[n]|**2}.  (1.5)
+And dividing by the number of points in the interval, n2 - n1 + 1 is the averaged power.
+
+In many systems we will be interested in examming power and energy in signals over an infinite time interval, for -∞ < t < +∞ or for -∞ < n < +∞.
+
+In continuous time:
+     E[∞] ∆= lim[T->∞]∫[-T,T]{|x(t)|**2}dt = ∫[-∞,+∞]{|x(t)|**2}dt.  (1.6)
+In discrete time:
+     E[∞] ∆= lim[N->∞]∑[n=-N,+N]{|x[t]|**2} = ∑[n=-∞,+∞]{|x[n]|**2}.  (1.7)
+
+Note that for some signals the integral in eq.(1.6) or sum in eq.(1.7) might not converge. If x(t) or x[n] equals a nonzero constant value for all time, such signals have infinite energy, while signals with E[∞] < ∞ have finite energy.
+
+Define the time-averaged power over an infinite interval as
+            P[∞] ∆= lim[T->∞]{1/(2T)∫[-T,T]{|x(t)|**2}dt}   (1.8)
+            P[∞] ∆= lim[N->∞]{1/(2N+1)∑[n=-N,+N]{|x[n]|**2}}   (1.9)
+
+Three important classes of signals.
+1. The class of signals with finite total energy E[∞] < ∞, and P[∞] = 0.
+2. The class of signals with finite average power P[∞], and E[∞] = ∞.
+3. The class of signals with infinite energy and power E[∞] = ∞ and P[∞] = ∞.
+
+
