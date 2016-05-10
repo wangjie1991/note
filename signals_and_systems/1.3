@@ -2,9 +2,161 @@
 
 1.3 EXPONENTIAL AND SINUSOIDAL SIGNALS
 
-1.3.1   Continuous-Time Complex Exponential and Sinusoidal Signals
+1.3.1 Continuous-Time Complex Exponential and Sinusoidal Signals
 The continuous-time complex exponential signal is of the form
                              x(t) = Ce**(at) (1.20)
 where C and a are complex numbers. Depending upon the values of these parameters, the complex exponential can exhibit several different characteristics.
 
+
+MATHEMATICAL REVIEW
+The complex number z can be represented in Cartesian or rectangular as
+                     z = x + jy.     x = Re{z}, y = Im{z}.
+
+The complex number z can also be represented in polar form as
+                                  z = re**(jθ)
+where r > 0 is the magnitude of z and θ is the angle or phase of z.
+
+The relationship between these two representations of complex numbers can be determined either from Euler's relation
+                             e**(jθ) = cosθ + jsinθ
+
+Using Euler's relation, we can derive the following relationships:
+a. cosθ = 1/2(e**(jθ) + e**(-jθ))
+b. sinθ = 1/2j(e**(jθ) - e**(-jθ))
+c. (cosθ)**2 = 1/2(1 + cos2θ)
+d. sinθsinφ = 1/2cos(θ-φ) - 1/2cos(θ+φ)
+e. sin(θ+φ) = sinθcosφ + cosθsinφ
+
+
 Real Exponential Signals
+If C and a are real, there are basically two types of behavior. If a is positive, then as t increases x(t) is a growing exponential. If a is negative, then x(t) is a decaying exponential.
+
+
+Periodic Complex Exponential and Sinusoidal Signals
+If a is purely imaginary, then
+                           x(t) = e**(jω0t)  (1.21)
+An important property of this signal is that it is periodic. To verify this,
+                       e**(jω0t) = e**(jω0(t+T))   (1.22)
+                             e**(jω0T) = 1  (1.23)
+If ω0 = 0, then x(t) = 1, which is periodic for any value of T.
+If ω0 ≠ 0, then e**(jω0T) = cos(ω0t) + jsin(ω0t) = 1 ==> ω0t = 2kπ ==>
+                             T0 = 2π/|ω0|    (1.24)
+Thus, the signal e**(jω0T) and e**(-jω0T) have the same fundamental period.
+
+A signal related to the periodic complex exponential is the sinusoidal signal
+                         x(t) = Acos(ω0t + Φ)    (1.25)
+Like teh complex exponential signal, the sinusoidal signal is periodic with fundamental period T0 given by eq.(1.24).
+
+By using Euler's relation, the complex exponential in eq.(1.21) can be written in terms of sinusoidal signals with the same fundamental period:
+                   e**(jω0t) = cos(ω0t) + jsin(ω0t)    (1.26)
+The sinusoidal signal of eq.(1.25) can be written in terms of periodic complex exponentials with the same fundamental period:
+           Acos(ω0t + Φ) = A/2(e**j(ω0t+Φ) + e**-j(Φ+ω0t))    (1.27)
+
+Note that e**j(ω0t+Φ) = cos(ω0t+Φ) + jsin(ω0t+Φ), so
+                     Acos(ω0t+Φ) = A*Re{e**j(ω0t+Φ)} (1.28)
+                     Asin(ω0t+Φ) = A*Im{e**j(ω0t+Φ)} (1.29)
+
+The fundamental period T0 of a continuous-time sinusoidal signal is inversely proportional to |ω0|, which called the fundamental frequency.
+If we decrease the magnitude of ω0, we slow down the rate of oscillation and increase the period.
+
+Periodic signals, including the complex periodic exponential signal and the sinusoidal signal have infinite total energy but finite average power.
+For example, to calculate the total energy and average power in the exponental signal of eq.(1.21) over one period:
+       E(period) = ∫[0,T0]{|e**(jω0t)|**2}dt = ∫[0,T0]{1}dt = T0.  (1.30)
+                   P(period) = 1/T0 * E(period) = 1.   (1.31)
+|e**(jω0t)| = √(Re**2 + Im**2) = √(cos(jω0t)**2 + sin(jω0t)**2) = 1
+
+Since there are an infinite number of periods as t ranges from -∞ to +∞, the total energy integrated over all time is infinite. However, each period of the signal looks exactly the same. That is, the complex periodic exponental signal has finite average power equal to
+         P[∞] = lim[T->∞]{1/(2T)∫[-T,T]{|e**(jω0t)|**2}dt} = 1   (1.32)
+
+Periodic complex exponentials is useful to consider sets of harmonically related complex exponentials, all of which are periodic with a common period T0.
+A complex expenential e**(jωt) to be periodic with period T0 is that
+                             e**(jωT0) = 1   (1.33)
+That is
+                     ωT0 = 2πk, k = 0, ±1, ±2, ...   (1.34)
+Thus, if we define
+                               ω0 = 2π/Τ0  (1.35)
+To satisfy eq.(1.34), ω must be an integer multiple of ω0. That is, a harmonically related set of complex exponentials is a set of periodic exponentials with fundamental frequencies that are all multiples of a single positive frequency ω0:
+               Φ[k](t) = e**(jkω0t), k = 0, ±1, ±2, ...    (1.36)
+For k = 0, Φ[k](t) is a constant, while for any other value fo k, Φ[k](t) is periodic with fundamental frequency |k|ω0 and fundamental period
+                           2π/(|k|ω0) = T0/|k| (1.37)
+
+Example 1.5
+It is desirable to express the sum of two complex exponentials as the product of a single complex exponential and a single sinusoid. For example
+                       x(t) = e**(j2t) + e**(j3t)  (1.38)
+then
+             x(t) = e**(j2.5t)(e**(-j0.5t) + e**(j0.5t))    (1.39)
+because of Euler's relation, can be rewritten as
+                       x(t) = 2e**(j2.5t)cos(0.5t) (1.40)
+the magnitude of x(t):
+                         |x(t)| = 2|cos(0.5t)|   (1.41)
+Thus, |x(t)| is a full-wave rectified sinusoid.
+
+
+General Complex Exponential Signals
+Consider a complex exponential Ce**(at), where C is expressed in polar form and a in rectangular form. That is
+                                 C = |C|e**(jθ)
+                                  a = r + jω0
+       Ce**(at) = |C|e**(jθ)e**((r+jω0)t) = |C|e**(rt)e**(j(ω0t+θ) (1.42)
+
+         Ce**(at) = |C|e**(rt)cos(ω0t+θ) + j|C|e**(rt)sin(ω0t+θ) (1.43)
+
+r = 0, the real and imaginary parts of a complex exponential are sinusoidal.
+r > 0, the sinusoidal signals multiplied by a growing exponential.
+r < 0, the sinusoidal signals multiplied by a decaying exponential.
+
+
+1.3.2 Discrete-Time Complex Exponential and Sinusoidal Signals
+An important signal in discrete time is the complex exponential signal(complex exponential sequence), defined by
+                             x[n] = Cα**n.  (1.44)
+where C and α are complex numbers. This could be expressed in the form
+                            x[n] = Ce**(βn). (1.45)
+where α = e**β.
+
+
+Real Exponential Signals
+· α > 1,        magnitude grows exponentially with same sign.
+· α = 1,        x[n] = C.
+· 1 > α > 0,    magnitude decays exponentially with same sign.
+· α = 0,
+· 0 > α > -1,   the magnitude decays exponentially with alternative sign.
+· α = -1,       x[n] alternates in C and -C.
+· -1 > α,       magnitude grows exponentially with alternative sign.
+
+
+Sinusoidal Signals
+If β is purely imaginary (|α|=1), then
+                           x[n] = e**(jω0n)    (1.46)
+this signal is closely related to the sinusoidal signal
+                         x[n] = Acos(ω0n + Φ)    (1.47)
+Using Euler's relation:
+                   e**(jω0n) = cos(ω0n) + jsin(ω0n)    (1.48)
+     Acos(ω0n + Φ) = (Α/2)e**(jΦ)e**(jω0n) + (A/2)e**(-jΦ)e**(-jω0n) (1.49)
+The total energy for -∞ < n < +∞ is infinite, while the average power per time point is equal to 1.
+
+
+General Complex Exponential Signals
+If we write C and α in polar form
+                                 C = |C|e**(jθ)
+                                α = |α|e**(jω0)
+         Cα**n = |C|(|α|**n)cos(ω0n+θ) + j|C|(|α|**n)sin(ω0n+θ)  (1.50)
+
+|α| = 1, the real and imaginary parts of the sequence are sinusoidal.
+|α| < 1, the sinusoidal sequences multiplied by a decaying exponential.
+|α| > 1, the sinusoidal sequences multiplied by a growing exponential.
+
+
+1.3.3 Periodicity Properties of Discrete-Time Complex Exponentials
+
+Two properties that is different between continuous-time signal e**(jω0t) and discrete-time signal e**(jω0n).
+(1) the larger the magnitude of ω0, the higher is the rate of oscillation in the signal.
+(2) e**(jω0t) is periodic for any value of ω0.
+
+The first property different in discrete time is a direct consequence of another extremely important distinction.
+Consider the discrete-time complex exponential with frequency ω0 + 2π:
+e**(j(ω0 + 2π)n) = e**(j2πn)e**(jω0n) = e**(jω0n)   (1.51)
+
+
+
+
+
+
+
