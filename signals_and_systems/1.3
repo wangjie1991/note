@@ -146,17 +146,40 @@ If we write C and α in polar form
 
 1.3.3 Periodicity Properties of Discrete-Time Complex Exponentials
 
-Two properties that is different between continuous-time signal e**(jω0t) and discrete-time signal e**(jω0n).
+Two properties that is different between continuous-time signal e**(jω0t) and discrete-time signal e**(jω0n). And the first property different in discrete time is a direct consequence of another extremely important distinction.
 (1) the larger the magnitude of ω0, the higher is the rate of oscillation in the signal.
 (2) e**(jω0t) is periodic for any value of ω0.
 
-The first property different in discrete time is a direct consequence of another extremely important distinction.
 Consider the discrete-time complex exponential with frequency ω0 + 2π:
            e**(j(ω0 + 2π)n) = e**(j2πn)e**(jω0n) = e**(jω0n)   (1.51)
 we see that the exponential at frequency ω0 + 2π is the same as that at frequency ω0, while e**(jω0t) are distinct for different ω0. In discrete time, the signal with frequency ω0 is identical to the signals with frequencies ω0 ± 2π, ω0 ± 4π and so on.
+Therefore, in considering discrete-time complex exponentials, we need only consider a frequency interval of length 2π. On most occasions we will use the interval 0 ≤ ω0 ≤ 2π or the interval -π ≤ ω0 ≤ π.
+As we increase ω0 from 0, we obtain signals that oscillate(振荡) more and more rapidly until we reach ω0 ＝ π. As we continue to increase ω0, we decrease the rate of oscillation until we reach ω0 = 2π, which produces the same constant sequence as ω0 = 0.
+Therefore, the low-frequencies are located near 0, 2π, and any othe even multiples of π, while the high-frequencies are located near ω0 = ±π and other odd multiples of π. Note that for ω0 = π or any other odd multiple of π,
+                   e**(jπn) = (e**(jπ))**n = (-1)**n   (1.52)
 
+In order for the signal e**(jω0n) to be periodic with period N > 0, we have
+                        e**(jω0(n+N)) = e**(jω0n) (1.53)
+                              e**(jω0N) = 1 (1.54)
+ω0Ν must be a multiple of 2π, that is there must be an integer m satisfy
+                               ω0*Ν = 2π*m (1.55)
+                               ω0/2π = m/N (1.56)
+According to eq.(1.56), the signal is periodic if ω0/2π is a rational number and is not periodic otherwise.
 
+It's clear that if ω0 ≠ 0 and if N and m have no factors in common, then the fundamental period of x[n] is N. And If x[n] is periodic with fundamental peroid N, its fundamental frequency is
+                               2π/N = ω0/m (1.57)
+                              N = m(2π/ω0) (1.58)
+It's again differ from their continuous-time counterparts.
 
+Example 1.6
+Determine the fundamental period of the discrete-time signal
+                 x[n] = e**(j(2π/3)n) + e**(j(3π/4)n)    (1.59)
+according to eq.(1.58) the first exponential has a fundamental period of 3. The second exponential that incrementing the angle (3π/4)n by 2π require n to be incremented by 8/3, which is impossible. According to eq.(1.58), the fundamental period of the second is 8. So the fundamental period of x[n] is 24.24
 
+Consider sets of harmonically related periodic exponentials in discrete-time signal. From eq.(1.56) we know that
+                 Φ[k][n] = e**(jk(2π/N)n), k = 0,±1,...  (1.60)
+Not like the continuous-time case that all of the harmonically related complex exponentials are distinct. To see
+   Φ[k+N][n] = e**(j(k+N)(2π/N)n) = e**(jk(2π/N)n)e**(j2πn) = Φ[k][n] (1.61)
+This implies that there are only N distinct periodic exponentials in the set with k from 0 to N-1.
 
 
