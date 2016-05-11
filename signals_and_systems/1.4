@@ -1,3 +1,43 @@
                          Chapter 1  Signals And Systems
 
 1.4 THE UNIT IMPULSE AND UNIT STEP FUNCTIONS
+
+1.4.1 The Discrete-Time Unit Impulse and Unit Step Sequences
+The unit impulse (or unit sample) is defined as
+                           δ[n] = 0, n ≠ 0    (1.63)
+                           δ[n] = 1, n = 0    (1.63)
+The unit step is defined as
+                           u[n] = 0, n < 0    (1.64)
+                           u[n] = 1, n ≥ 0    (1.64)
+
+The discrete-time unit impulse is the first difference of the discrete-time step
+                         δ[n] = u[n] - u[n-1]    (1.65)
+The discrete-time unit step is the running sum(累加和) of the unit impulse
+                         u[n] = ∑[m=-∞,n]{δ[m]}  (1.66)
+By changing the variable of summation from m to k=n-m in eq.(1.66), then
+        u[n] = ∑[k=∞,0]{δ[n - k]}  |  u[n] = ∑[k=0,∞]{δ[n - k]}  (1.67)
+
+Maybe it's a little confused about the independent variables in the eq. It's better to consider the variable n from -∞ to +∞, and calculate the value of δ[n] and u[n], then we will get the distribution of δ[n] and u[n]. 
+
+Since δ[n] is nonzero only for n = 0, it follows that
+                          x[n]δ[n] = x[0]δ[n]  (1.68)
+If we consider a unit impulse δ[n - n0] at n = n0, then
+                     x[n]δ[n - n0] = x[n0]δ[n - n0]  (1.69)
+
+
+1.4.2 The Continuous-Time Unit Step and Unit Impulse Functions
+The continuous-time unit step function u(t) is defined as
+                            u(t) = 0, t < 0  (1.70)
+                            u(t) = 1, t > 0  (1.70)
+Note that the unit step is discontinuous at t = 0.
+
+The relationship between the continuous-time unit impulse and step functions is analogous to the discrete-time functions.
+The continuous-time unit step is the running integral(积分函数) of the continuous-time impulse function δ(t)
+                         u(t) = ∫[-∞,t]{δ(τ)}dτ  (1.71)
+The continuous-time unit impulse can be thought of as the first derivative of the continuous-time unit step
+                            δ(t) = du(t)/dt  (1.72)
+
+There is some formal difficulty with eq.(1.72) as a representation of the unit impulse function, since u(t) is discontinuous at t = 0 and consequently is formally not differentiable.
+
+
+
