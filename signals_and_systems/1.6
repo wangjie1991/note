@@ -1,0 +1,116 @@
+                         Chapter 1  Signals And Systems
+
+1.6 BASIC SYSTEM PROPERTIES
+
+1.6.1 Systems with and without Memory
+A system is said to be memoryless if its output for each value of the independent variable at a given time is dependent only on the input at the same time. An simple Example is y[n] = 2x[n].
+
+One particularly simple memoryless-system is the identity system, whose output is identical to its input. The input-output relationship is y(t) = x(t) in continuous-time and y[n] = x[n] in discrete-time.
+
+An example of a discrete-time system with memory is an accumulator or summer
+                         y[n] = ∑[k=-∞,n]{x[k]}  (1.92)
+Another example is a delay
+                            y[n] = x[n - 1]  (1.93)
+
+A capacitor is an example of a continuous-time system with memory, since if the input is taken to be the current and the output is the voltage, then
+                       y(t) = 1/C∫[-∞,t]{x(τ)}dτ  (1.94)
+where C is the capacitance.
+
+In a word, the concept of memory in a system corresponds to the presence of a mechanism in the system that retains or stores information about input values at times other than the current time.
+The relationship between the input and output of an accumulator is
+                    y[n] = ∑[k=-∞,n-1]{x[k]} + x[n]  (1.95)
+                         y[n] = y[n - 1] + x[n]  (1.96)
+
+
+1.6.2 Invertibility and Inverse Systems
+A system is said to be invertible if distinct inputs lead to distinct outputs. If a system is invertible, then an inverse system exists, which cascaded with the original system, yields an output w[n] equal to the input x[n] to the first system.
+
+An example of an invertible continuous-time system is y(t) = 2x(t), for which the inverse system is w(t) = 1/2y(t). Another example is the accumulator of eq.(1.92). The inverse system is w[n] = y[n] - y[n - 1].
+Examples of noninvertible system are y[n] = 0.
+
+
+1.6.3 Causality(因果关系)
+A system is causal if the output at any time depends only on values of the input at the present time and in the past. Such a system is often referred to as being nonanticipative(非预报的), as the system output does not anticipate future values of the input.
+The eq.(1.92) are causal, while y[n] = x[n] - x[n+1] is not.
+
+Example 1.12
+When checking the causality of a system, it's important to look carefully at the input-output relation. For the system y[n] = x[-n], we should consider both the positive and negative time, so it's not causal.
+It's also important to distinguish carefully the effects of the input from any other functions. For example, y(t) = x(t)cos(t+1) can rewrite as y(t) = x(t)g(t), where g(t) = cos(t+1). This system is causal.
+
+
+1.6.4 Stability
+Informally, a stable system is one in which small inputs lead to responses that do not diverge(偏离).
+More formally, if the input to a stable system is bounded, then the output must also be bounded and therefore cannot diverge.
+
+Consider the discrete-time system 
+                   y[n] = 1/(2M+1)∑[k=-M,+M]{x[n-k]}  (1.104)
+If the input x[n] is bounded in magnitude by some number, say B, for all values of n. Then the largest possible magnitude for y[n] is also B. Therefore, y[n] is bounded and the system is stable.
+Consider the system of eq.(1.92). The system is unstable, since the sum can grow continually even if x[n] is bounded.
+
+Example 1.13
+If we suspect that a system is unstable, then a useful strategy to verify this is to look for a specific bounded input that leads to an unbounded output.
+If such an example does not exist or is difficult to find, we must check for stability by using a method that does not utilize specific examples of input signals. For example, to check the stability of two systems:
+                          S[1]: y(t) = tx(t)  (1.109)
+                         S[2]: y(t) = e**x(t)  (1.110)
+We might try simple bounded inputs such as a constant or a unit step to check stability. For eq.(1.109), a constant input x(t)=1 yields y(t)=t. It's clear that the system s[1] is unstable.
+For S[2], we need to verify that all bounded inputs result in bounded outputs. Let B be an arbitrary positive number, x(t) be an arbitrary signal bounded by B. Then -B < x(t) < B for all t, so e**(-B) < |y(t)| < e**B and S[2] is stable. 
+
+
+1.6.5 Time Invariance(时不变)
+A system is time invariant if the behavior and characteristics of the system are fixed over time.
+In terms of the signals and systems language, a system is time invariant if a time shift in the input signal results in an identical time shift in the output signal. That is, if y[n] is the output of a discrete-time, time-invariant system when x[n] is the input, then y[n-n0] is the output when x[n-n0] is applied.
+
+Example 1.14
+Consider the continuous-time system
+                           y(t) = sin|x(t)|  (1.114)
+We must determine whether the time-invariance property holds for any input and any time shift t0. Thus, let x1(t) be an arbitrary input to this system
+                          y1(t) = sin|x1(t)|  (1.115)
+Then consider a second input obtained by shifting x1(t)
+                          x2(t) = x1(t - t0)  (1.116)
+The output is
+                 y2(t) = sin|x2(t)| = sin|x1(t - t0)|  (1.117)
+From eq.(1.115)
+                     y1(t - t0) = sin|x1(t - t0)|  (1.118)
+From eq.(1.117) and eq.(1.118), we have
+                              y2(t) = y1(t - t0).
+Thus the system is time invariant.
+
+Example 1.15
+Consider the discrete-time system
+                             y[n] = nx[n]  (1.119)
+This is a time-varying system. Let the input signal be x1[n], then
+y1[n] = nx1[n], x2[n] = x1[n - n0], y2[n] = nx2[n] = nx1[n - n0].
+From eq.(1.119), y1[n - n0] = (n - n0)x1[n - n0]. 
+So y2[n] = n/(n - n0)y[n - n0]. The system is not time invariant.
+
+Example 1.16
+Consider the system
+                             y(t) = x(2t)  (1.120)
+This system represents a time scaling. y(t) is a time-compressed version of x(t). Then any time shift in the input will also be compressed by a factor of 2. The system is not time invariant.
+
+
+1.6.6 Linearity
+A linear system is a system that possesses the important property of superposition(叠加): If an input consists of the weighted sum of several signals, then the output is the superposition.
+
+Let y1(t) be the response of a continuous-time system to an input x1(t), and let y2(t) be the output corresponding to the input x2(t). The system is linear if:
+1. The response to x1(t) + x2(t) is y(1) + y2(t).
+2. The response to ax1(t) is ay1(t), where a is any complex constant.
+
+The first of these two properties is known as the additivity property; the second is known as the scaling or homogeneity(同质) property.
+The two properties defining a linear system can be combined into a single statement(a and b are any complex constant):
+          continuous time: ax1(t) + bx2(t) -> ay1(t) + by2(t)  (1.121)
+           discrete time: ax1[n] + bx2[n] -> ay1[n] + by2[n]  (1.122)
+The superposition property:
+          x[n] = ∑[k]{a[k]x[k][n]} = a1x1[n] + a2x2[n] + ...  (1.123)
+          y[n] = ∑[k]{a[k]y[k][n]} = a1y1[n] + a2y2[n] + ...  (1.124)
+
+Note that a system can be linear without being time invariant, as in eq.(1.119), and it can be time invariant without being linear, as in eq.(1.114).
+
+For linear systems, an input which is zero for all time results in an output which is zero for all time. This is called "zeor-in/zero-out" property.
+                     0 = 0 * x[n] -> 0 * y[n] = 0  (1.125)
+
+Consider the system
+y[n] = 2x[n] + 3  (1.132)
+The output of this system can be represented as the sum of the output of a linear system (x[n] -> 2x[n]) and another signal equal to the zero-input response (y0[n] = 3) of the system. Such system correspond to the class of incrementally linear systems which respond linearly to changes in the input.
+
+

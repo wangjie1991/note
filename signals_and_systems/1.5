@@ -11,7 +11,18 @@ Similarly, a discrete-time system is a system that transforms discrete-time inpu
 
 
 1.5.1 Simple Examples of Systems
+The mathematical descriptions of systems have a great deal in common. So it's better to develop broadly applicable tools for signal and system analysis.
+The key is to identify classes of systems that have two important characteristics:
+1. The systems in this class have properties and structures that we can exploit to gain insight into their behavior and to develop effective tools for their analysis.
+2. Many systems of practical importance can be accurately modeled using systems in this class.
 
 1.5.2 Interconnections of Systems
-The concept of the interconnection of systems is an important idea.
+The concept of the interconnection of systems is an important idea. By viewing such a system as an interconnection of its components, we can use our understanding of the component systems and of how they are interconnected in order to analyze the operation and behavior of the overall system.
+
+A series or cascade interconnection of two systems is which the output of System 1 is the input to System 2, and the overall system transforms an input by processing it first by System 1 and then by System 2.
+
+A parallel interconnection of two systems is which the same input signal is applied to Systems 1 and 2, and the output is the sum of the outputs of Systems 1 and 2.
+
+A feedback interconnection of two systems is which the output of System 1 is the input to System 2, while the output of System 2 is feedback and added to the external input to produce the actual input to System 1.
+
 
