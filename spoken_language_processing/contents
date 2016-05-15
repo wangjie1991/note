@@ -1,0 +1,518 @@
+                               TABLE OF CONTENTS
+1. INTRODUCTION
+  1.1. MOTIVATIONS
+    1.1.1. Spoken Language Interface
+    1.1.2. Speech-to-speech Translation
+    1.1.3. Knowledge Partners
+  1.2. SPOKEN LANGUAGE SYSTEM ARCHITECTURE
+    1.2.1. Automatic Speech Recognition
+    1.2.2. Text-to-Speech Conversion
+    1.2.3. Spoken Language Understanding
+  1.3. BOOK ORGANIZATION
+    1.3.1. Part I: Fundamental Theory
+    1.3.2. Part II: Speech Processing
+    1.3.3. Part III: Speech Recognition
+    1.3.4. Part IV: Text-to-Speech Systems
+    1.3.5. Part V: Spoken Language Systems
+  1.4. TARGET AUDIENCES
+  1.5. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+
+PART I: FUNDAMENTAL THEORY
+
+2. SPOKEN LANGUAGE STRUCTURE
+  2.1. SOUND AND HUMAN SPEECH SYSTEMS
+    2.1.1. Sound
+    2.1.2. Speech Production
+    2.1.3. Speech Perception
+  2.2. PHONETICS AND PHONOLOGY
+    2.2.1. Phonemes
+    2.2.2. The Allophone: Sound and Context
+    2.2.3. Speech Rate and Coarticulation
+  2.3. SYLLABLES ANDWORDS
+    2.3.1. Syllables
+    2.3.2. Words
+  2.4. SYNTAX AND SEMANTICS
+    2.4.1. Syntactic Constituents
+    2.4.2. Semantic Roles
+    2.4.3. Lexical Semantics
+    2.4.4. Logical Form
+  2.5. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+3. PROBABILITY, STATISTICS AND INFORMATION THEORY
+  3.1. PROBABILITY THEORY
+    3.1.1. Conditional Probability And Bayes' Rule
+    3.1.2. Random Variables
+    3.1.3. Mean and Variance
+    3.1.4. Covariance and Correlation
+    3.1.5. Random Vectors and Multivariate Distributions
+    3.1.6. Some Useful Distributions
+    3.1.7. Gaussian Distributions
+  3.2. ESTIMATION THEORY
+    3.2.1. Minimum/Least Mean Squared Error Estimation
+    3.2.2. Maximum Likelihood Estimation
+    3.2.3. Bayesian Estimation and MAP Estimation
+  3.3. SIGNIFICANCE TESTING
+    3.3.1. Level of Significance
+    3.3.2. Normal Test (Z-Test)
+    3.3.3. χ2 Goodness-of-Fit Test
+    3.3.4. Matched-Pairs Test
+  3.4. INFORMATION THEORY
+    3.4.1. Entropy
+    3.4.2. Conditional Entropy
+    3.4.3. The Source Coding Theorem
+    3.4.4. Mutual Information and Channel Coding
+  3.5. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+4. PATTERN RECOGNITION
+  4.1. BAYES DECISION THEORY
+    4.1.1. Minimum-Error-Rate Decision Rules
+    4.1.2. Discriminant Functions
+  4.2. HOW TO CONSTRUCT CLASSIFIERS
+    4.2.1. Gaussian Classifiers
+    4.2.2. The Curse of Dimensionality
+    4.2.3. Estimating the Error Rate
+    4.2.4. Comparing Classifiers
+  4.3. DISCRIMINATIVE TRAINING
+    4.3.1. Maximum Mutual Information Estimation
+    4.3.2. Minimum-Error-Rate Estimation
+    4.3.3. Neural Networks
+  4.4. UNSUPERVISED ESTIMATIONMETHODS
+    4.4.1. Vector Quantization
+    4.4.2. The EM Algorithm
+    4.4.3. Multivariate Gaussian Mixture Density Estimation
+  4.5. CLASSIFICATION AND REGRESSION TREES
+    4.5.1. Choice of Question Set
+    4.5.2. Splitting Criteria
+    4.5.3. Growing the Tree
+    4.5.4. Missing Values and Conflict Resolution
+    4.5.5. Complex Questions
+    4.5.6. The Right-Sized Tree
+  4.6. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+
+PART II SPEECH PROCESSING
+
+5. DIGITAL SIGNAL PROCESSING
+  5.1. DIGITAL SIGNALS AND SYSTEMS
+    5.1.1. Sinusoidal Signals
+    5.1.2. Other Digital Signals
+    5.1.3. Digital Systems
+  5.2. CONTINUOUS-FREQUENCY TRANSFORMS
+    5.2.1. The Fourier Transform
+    5.2.2. Z-Transform
+    5.2.3. Z-Transforms of Elementary Functions
+    5.2.4. Properties of the Z and Fourier Transform
+  5.3. DISCRETE-FREQUENCY TRANSFORMS
+    5.3.1. The Discrete Fourier Transform (DFT)
+    5.3.2. Fourier Transforms of Periodic Signals
+    5.3.3. The Fast Fourier Transform (FFT)
+    5.3.4. Circular Convolution
+    5.3.5. The Discrete Cosine Transform (DCT)
+  5.4. DIGITAL FILTERS ANDWINDOWS
+    5.4.1. The Ideal Low-Pass Filter
+    5.4.2. Window Functions
+    5.4.3. FIR Filters
+    5.4.4. IIR Filters
+  5.5. DIGITAL PROCESSING OF ANALOG SIGNALS
+    5.5.1. Fourier Transform of Analog Signals
+    5.5.2. The Sampling Theorem
+    5.5.3. Analog-to-Digital Conversion
+    5.5.4. Digital-to-Analog Conversion
+  5.6. MULTIRATE SIGNAL PROCESSING
+    5.6.1. Decimation
+    5.6.2. Interpolation
+    5.6.3. Resampling
+  5.7. FILTERBANKS
+    5.7.1. Two-Band Conjugate Quadrature Filters
+    5.7.2. Multiresolution Filterbanks
+    5.7.3. The FFT as a Filterbank
+    5.7.4. Modulated Lapped Transforms
+  5.8. STOCHASTIC PROCESSES
+    5.8.1. Statistics of Stochastic Processes
+    5.8.2. Stationary Processes
+    5.8.3. LTI Systems with Stochastic Inputs
+    5.8.4. Power Spectral Density
+    5.8.5. Noise
+  5.9. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+6. SPEECH SIGNAL REPRESENTATIONS
+  6.1. SHORT-TIME FOURIER ANALYSIS
+    6.1.1. Spectrograms
+    6.1.2. Pitch-Synchronous Analysis
+  6.2. ACOUSTICALMODEL OF SPEECH PRODUCTION
+    6.2.1. Glottal Excitation
+    6.2.2. Lossless Tube Concatenation
+    6.2.3. Source-Filter Models of Speech Production
+  6.3. LINEAR PREDICTIVE CODING
+    6.3.1. The Orthogonality Principle
+    6.3.2. Solution of the LPC Equations
+    6.3.3. Spectral Analysis via LPC
+    6.3.4. The Prediction Error
+    6.3.5. Equivalent Representations
+  6.4. CEPSTRAL PROCESSING
+    6.4.1. The Real and Complex Cepstrum
+    6.4.2. Cepstrum of Pole-Zero Filters
+    6.4.3. Cepstrum of Periodic Signals
+    6.4.4. Cepstrum of Speech Signals
+    6.4.5. Source-Filter Separation via the Cepstrum
+  6.5. PERCEPTUALLY-MOTIVATED REPRESENTATIONS
+    6.5.1. The Bilinear Transform
+    6.5.2. Mel-Frequency Cepstrum
+    6.5.3. Perceptual Linear Prediction (PLP)
+  6.6. FORMANT FREQUENCIES
+    6.6.1. Statistical Formant Tracking
+  6.7. THE ROLE OF PITCH
+    6.7.1. Autocorrelation Method
+    6.7.2. Normalized Cross-Correlation Method
+    6.7.3. Signal Conditioning
+    6.7.4. Pitch Tracking
+  6.8. HISTORICAL PERSPECTIVE AND FUTURE READING
+
+7. SPEECH CODING
+  7.1. SPEECH CODERS ATTRIBUTES
+  7.2. SCALARWAVEFORM CODERS
+    7.2.1. Linear Pulse Code Modulation (PCM)
+    7.2.2. μ-law and A-law PCM
+    7.2.3. Adaptive PCM
+    7.2.4. Differential Quantization
+  7.3. SCALAR FREQUENCY DOMAIN CODERS
+    7.3.1. Benefits of Masking
+    7.3.2. Transform Coders
+    7.3.3. Consumer Audio
+    7.3.4. Digital Audio Broadcasting (DAB)
+  7.4. CODE EXCITED LINEAR PREDICTION (CELP)
+    7.4.1. LPC Vocoder
+    7.4.2. Analysis by Synthesis
+    7.4.3. Pitch Prediction: Adaptive Codebook
+    7.4.4. Perceptual Weighting and Postfiltering
+    7.4.5. Parameter Quantization
+    7.4.6. CELP Standards
+  7.5. LOW-BIT RATE SPEECH CODERS
+    7.5.1. Mixed-Excitation LPC Vocoder
+    7.5.2. Harmonic Coding
+    7.5.3. Waveform Interpolation
+  7.6. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+
+PART III: SPEECH RECOGNITION
+
+8. HIDDEN MARKOV MODELS
+  8.1. THEMARKOV CHAIN
+  8.2. DEFINITION OF THE HIDDENMARKOVMODEL
+    8.2.1. Dynamic Programming and DTW
+    8.2.2. How to Evaluate an HMM – The Forward Algorithm
+    8.2.3. How to Decode an HMM - The Viterbi Algorithm
+    8.2.4. How to Estimate HMM Parameters – Baum-Welch Algorithm
+  8.3. CONTINUOUS AND SEMI-CONTINUOUSHMMS
+    8.3.1. Continuous Mixture Density HMMs
+    8.3.2. Semi-continuous HMMs
+  8.4. PRACTICAL ISSUES IN USINGHMMS
+    8.4.1. Initial Estimates
+    8.4.2. Model Topology
+    8.4.3. Training Criteria
+    8.4.4. Deleted Interpolation
+    8.4.5. Parameter Smoothing
+    8.4.6. Probability Representations
+  8.5. HMM LIMITATIONS
+    8.5.1. Duration Modeling
+    8.5.2. First-Order Assumption
+    8.5.3. Conditional Independence Assumption
+  8.6. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+9. ACOUSTIC MODELING
+  9.1. VARIABILITY IN THE SPEECH SIGNAL
+    9.1.1. Context Variability
+    9.1.2. Style Variability
+    9.1.3. Speaker Variability
+    9.1.4. Environment Variability
+  9.2. HOW TOMEASURE SPEECH RECOGNITION ERRORS
+  9.3. SIGNAL PROCESSING—EXTRACTING FEATURES
+    9.3.1. Signal Acquisition
+    9.3.2. End-Point Detection
+    9.3.3. MFCC and Its Dynamic Features
+    9.3.4. Feature Transformation
+  9.4. PHONETICMODELING—SELECTING APPROPRIATE UNITS
+    9.4.1. Comparison of Different Units
+    9.4.2. Context Dependency
+    9.4.3. Clustered Acoustic-Phonetic Units
+    9.4.4. Lexical Baseforms
+  9.5. ACOUSTICMODELING—SCORING ACOUSTIC FEATURES
+    9.5.1. Choice of HMM Output Distributions
+    9.5.2. Isolated vs. Continuous Speech Training
+  9.6. ADAPTIVE TECHNIQUES—MINIMIZINGMISMATCHES
+    9.6.1. Maximum a Posteriori (MAP)
+    9.6.2. Maximum Likelihood Linear Regression (MLLR)
+    9.6.3. MLLR and MAP Comparison
+    9.6.4. Clustered Models
+  9.7. CONFIDENCEMEASURES: MEASURING THE RELIABILITY
+    9.7.1. Filler Models
+    9.7.2. Transformation Models
+    9.7.3. Combination Models
+  9.8. OTHER TECHNIQUES
+    9.8.1. Neural Networks
+    9.8.2. Segment Models
+  9.9. CASE STUDY: WHISPER
+  9.10. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+10. ENVIRONMENTAL ROBUSTNESS
+  10.1. THE ACOUSTICAL ENVIRONMENT
+    10.1.1. Additive Noise
+    10.1.2. Reverberation
+    10.1.3. A Model of the Environment
+  10.2. ACOUSTICAL TRANSDUCERS
+    10.2.1. The Condenser Microphone
+    10.2.2. Directionality Patterns
+    10.2.3. Other Transduction Categories
+  10.3. ADAPTIVE ECHO CANCELLATION (AEC)
+    10.3.1. The LMS Algorithm
+    10.3.2. Convergence Properties of the LMS Algorithm
+    10.3.3. Normalized LMS Algorithm
+    10.3.4. Transform-Domain LMS Algorithm
+    10.3.5. The RLS Algorithm
+  10.4. MULTIMICROPHONE SPEECH ENHANCEMENT
+    10.4.1. Microphone Arrays
+    10.4.2. Blind Source Separation
+  10.5. ENVIRONMENT COMPENSATION PREPROCESSING
+    10.5.1. Spectral Subtraction
+    10.5.2. Frequency-Domain MMSE from Stereo Data
+    10.5.3. Wiener Filtering
+    10.5.4. Cepstral Mean Normalization (CMN)
+    10.5.5. Real-Time Cepstral Normalization
+    10.5.6. The Use of Gaussian Mixture Models
+  10.6. ENVIRONMENTALMODEL ADAPTATION
+    10.6.1. Retraining on Corrupted Speech
+    10.6.2. Model Adaptation
+    10.6.3. Parallel Model Combination
+    10.6.4. Vector Taylor Series
+    10.6.5. Retraining on Compensated Features
+  10.7. MODELING NONSTATIONARY NOISE
+  10.8. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+11. LANGUAGE MODELING
+  11.1. FORMAL LANGUAGE THEORY
+    11.1.1. Chomsky Hierarchy
+    11.1.2. Chart Parsing for Context-Free Grammars
+  11.2. STOCHASTIC LANGUAGEMODELS
+    11.2.1. Probabilistic Context-Free Grammars
+    11.2.2. N-gram Language Models
+  11.3. COMPLEXITYMEASURE OF LANGUAGEMODELS
+  11.4. N-GRAM SMOOTHING
+    11.4.1. Deleted Interpolation Smoothing
+    11.4.2. Backoff Smoothing
+    11.4.3. Class n-grams
+    11.4.4. Performance of n-gram Smoothing
+  11.5. ADAPTIVE LANGUAGEMODELS
+    11.5.1. Cache Language Models
+    11.5.2. Topic-Adaptive Models
+    11.5.3. Maximum Entropy Models
+  11.6. PRACTICAL ISSUES
+    11.6.1. Vocabulary Selection
+    11.6.2. N-gram Pruning
+    11.6.3. CFG vs n-gram Models
+  11.7. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+12. BASIC SEARCH ALGORITHMS
+  12.1. BASIC SEARCH ALGORITHMS
+    12.1.1. General Graph Searching Procedures
+    12.1.2. Blind Graph Search Algorithms
+    12.1.3. Heuristic Graph Search
+  12.2. SEARCH ALGORITHMS FOR SPEECH RECOGNITION
+    12.2.1. Decoder Basics
+    12.2.2. Combining Acoustic And Language Models
+    12.2.3. Isolated Word Recognition
+    12.2.4. Continuous Speech Recognition
+  12.3. LANGUAGEMODEL STATES
+    12.3.1. Search Space with FSM and CFG
+    12.3.2. Search Space with the Unigram
+    12.3.3. Search Space with Bigrams
+    12.3.4. Search Space with Trigrams
+    12.3.5. How to Handle Silences Between Words
+  12.4. TIME-SYNCHRONOUS VITERBI BEAM SEARCH
+    12.4.1. The Use of Beam
+    12.4.2. Viterbi Beam Search
+  12.5. STACK DECODING (A* SEARCH)
+    12.5.1. Admissible Heuristics for Remaining Path
+    12.5.2. When to Extend New Words
+    12.5.3. Fast Match
+    12.5.4. Stack Pruning
+    12.5.5. Multistack Search
+  12.6. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+13. LARGE VOCABULARY SEARCH ALGORITHMS
+  13.1. EFFICIENTMANIPULATION OF TREE LEXICON
+    13.1.1. Lexical Tree
+    13.1.2. Multiple Copies of Pronunciation Trees
+    13.1.3. Factored Language Probabilities
+    13.1.4. Optimization of Lexical Trees
+    13.1.5. Exploiting Subtree Polymorphism
+    13.1.6. Context-Dependent Units and Inter-Word Triphones
+  13.2. OTHER EFFICIENT SEARCH TECHNIQUES
+    13.2.1. Using Entire HMM as a State in Search
+    13.2.2. Different Layers of Beams
+    13.2.3. Fast Match
+  13.3. N-BEST ANDMULTIPASS SEARCH STRATEGIES
+    13.3.1. N-Best Lists and Word Lattices
+    13.3.2. The Exact N-best Algorithm
+    13.3.3. Word-Dependent N-Best and Word-Lattice Algorithm
+    13.3.4. The Forward-Backward Search Algorithm
+    13.3.5. One-Pass vs. Multipass Search
+  13.4. SEARCH-ALGORITHM EVALUATION
+  13.5. CASE STUDY—MICROSOFTWHISPER
+    13.5.1. The CFG Search Architecture
+    13.5.2. The N-Gram Search Architecture
+  13.6. HISTORICAL PERSPECTIVES AND FURTHER READING
+
+
+PART IV: TEXT-TO-SPEECH SYSTEMS
+14. TEXT AND PHONETIC ANALYSIS
+  14.1. MODULES AND DATA FLOW
+    14.1.1. Modules
+    14.1.2. Data Flows
+    14.1.3. Localization Issues
+  14.2. LEXICON
+  14.3. DOCUMENT STRUCTURE DETECTION
+    14.3.1. Chapter and Section Headers
+    14.3.2. Lists
+    14.3.3. Paragraphs
+    14.3.4. Sentences
+    14.3.5. E-mail
+    14.3.6. Web Pages
+    14.3.7. Dialog Turns and Speech Acts
+  14.4. TEXT NORMALIZATION
+    14.4.1. Abbreviations and Acronyms
+    14.4.2. Number Formats
+    14.4.3. Domain-Specific Tags
+    14.4.4. Miscellaneous Formats
+  14.5. LINGUISTIC ANALYSIS
+  14.6. HOMOGRAPH DISAMBIGUATION
+  14.7. MORPHOLOGICAL ANALYSIS
+  14.8. LETTER-TO-SOUND CONVERSION
+  14.9. EVALUATION
+  14.10. CASE STUDY: FESTIVAL
+    14.10.1. Lexicon
+    14.10.2. Text Analysis
+    14.10.3. Phonetic Analysis
+  14.11. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+15. PROSODY
+  15.1. THE ROLE OF UNDERSTANDING
+  15.2. PROSODY GENERATION SCHEMATIC
+  15.3. SPEAKING STYLE
+    15.3.1. Character
+    15.3.2. Emotion
+  15.4. SYMBOLIC PROSODY
+    15.4.1. Pauses
+    15.4.2. Prosodic Phrases
+    15.4.3. Accent
+    15.4.4. Tone
+    15.4.5. Tune
+    15.4.6. Prosodic Transcription Systems
+  15.5. DURATION ASSIGNMENT
+    15.5.1. Rule-Based Methods
+    15.5.2. CART-Based Durations
+  15.6. PITCH GENERATION
+    15.6.1. Attributes of Pitch Contours
+    15.6.2. Baseline F0 Contour Generation
+    15.6.3. Parametric F0 Generation
+    15.6.4. Corpus-Based F0 Generation
+  15.7. PROSODYMARKUP LANGUAGES
+  15.8. PROSODY EVALUATION
+  15.9. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+16. SPEECH SYNTHESIS
+  16.1. ATTRIBUTES OF SPEECH SYNTHESIS
+  16.2. FORMANT SPEECH SYNTHESIS
+    16.2.1. Waveform Generation from Formant Values
+    16.2.2. Formant Generation by Rule
+    16.2.3. Data-Driven Formant Generation
+    16.2.4. Articulatory Synthesis
+  16.3. CONCATENATIVE SPEECH SYNTHESIS
+    16.3.1. Choice of Unit
+    16.3.2. Optimal Unit String: The Decoding Process
+    16.3.3. Unit Inventory Design
+  16.4. PROSODICMODIFICATION OF SPEECH
+    16.4.1. Synchronous Overlap and Add (SOLA)
+    16.4.2. Pitch Synchronous Overlap and Add (PSOLA)
+    16.4.3. Spectral Behavior of PSOLA
+    16.4.4. Synthesis Epoch Calculation
+    16.4.5. Pitch-Scale Modification Epoch Calculation
+    16.4.6. Time-Scale Modification Epoch Calculation
+    16.4.7. Pitch-Scale Time-Scale Epoch Calculation
+    16.4.8. Waveform Mapping
+    16.4.9. Epoch Detection
+    16.4.10. Problems with PSOLA
+  16.5. SOURCE-FILTERMODELS FOR PROSODYMODIFICATION
+    16.5.1. Prosody Modification of the LPC Residual
+    16.5.2. Mixed Excitation Models
+    16.5.3. Voice Effects
+  16.6. EVALUATION OF TTS SYSTEMS
+    16.6.1. Intelligibility Tests
+    16.6.2. Overall Quality Tests
+    16.6.3. Preference Tests
+    16.6.4. Functional Tests
+    16.6.5. Automated Tests
+  16.7. HISTORICAL PERSPECTIVE AND FUTURE READING
+
+
+PART V: SPOKEN LANGUAGE SYSTEMS
+  17. SPOKEN LANGUAGE UNDERSTANDING
+  17.1. WRITTEN VS. SPOKEN LANGUAGES
+    17.1.1. Style
+    17.1.2. Disfluency
+    17.1.3. Communicative Prosody
+  17.2. DIALOG STRUCTURE
+    17.2.1. Units of Dialog
+    17.2.2. Dialog (Speech) Acts
+    17.2.3. Dialog Control
+  17.3. SEMANTIC REPRESENTATION
+    17.3.1. Semantic Frames
+    17.3.2. Conceptual Graphs
+  17.4. SENTENCE INTERPRETATION
+    17.4.1. Robust Parsing
+    17.4.2. Statistical Pattern Matching
+  17.5. DISCOURSE ANALYSIS
+    17.5.1. Resolution of Relative Expression
+    17.5.2. Automatic Inference and Inconsistency Detection
+  17.6. DIALOGMANAGEMENT
+    17.6.1. Dialog Grammars
+    17.6.2. Plan-Based Systems
+    17.6.3. Dialog Behavior
+  17.7. RESPONSE GENERATION AND RENDITION
+    17.7.1. Response Content Generation
+    17.7.2. Concept-to-Speech Rendition
+    17.7.3. Other Renditions
+  17.8. EVALUATION
+    17.8.1. Evaluation in the ATIS Task
+    17.8.2. PARADISE Framework
+  17.9. CASE STUDY—DR. WHO
+    17.9.1. Semantic Representation
+    17.9.2. Semantic Parser (Sentence Interpretation)
+    17.9.3. Discourse Analysis
+    17.9.4. Dialog Manager
+  17.10. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+18. APPLICATIONS AND USER INTERFACES
+  18.1. APPLICATION ARCHITECTURE
+  18.2. TYPICAL APPLICATIONS
+    18.2.1. Computer Command and Control
+    18.2.2. Telephony Applications
+    18.2.3. Dictation
+    18.2.4. Accessibility
+    18.2.5. Handheld Devices
+    18.2.6. Automobile Applications
+    18.2.7. Speaker Recognition
+  18.3. SPEECH INTERFACE DESIGN
+    18.3.1. General Principles
+    18.3.2. Handling Errors
+    18.3.3. Other Considerations
+    18.3.4. Dialog Flow
+  18.4. INTERNATIONALIZATION
+  18.5. CASE STUDY—MIPAD
+    18.5.1. Specifying the Application
+    18.5.2. Rapid Prototyping
+    18.5.3. Evaluation
+    18.5.4. Iterations
+  18.6. HISTORICAL PERSPECTIVE AND FURTHER READING
+
+

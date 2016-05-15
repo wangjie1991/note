@@ -1,0 +1,60 @@
+                    Chapter 2  Linear Time-Invariant Systems
+
+2.1 DISCRETE-TIME LTI SYSTEMS: THE CONVOLUTION SUM
+
+2.1.1 The representation of Discrete-Time Signals in Terms of Impulses
+
+
+Example 2.4
+Consider the two sequences
+x[n] = { 1, 0 ≤ n ≤ 4 }     h[n] = { α**n, 0 ≤ n ≤ 6 }
+       { 0, otherwise }            { 0, otherwise    }
+Consider x[k]h[n-k], it's convenient to consider 5 separate intervals for n.
+
+1. For n < 0, there is no overlap between the nonzero positions of x[k] and 
+   h[n-k], and consequently, y[n] = 0.
+
+2. For 0 ≤ n ≤ 4,
+   x[k]h[n-k] = { α**(n-k), 0 ≤ k ≤ n
+                { 0,        otherwise
+   Thus, in this interval,
+   y[n] = ∑[k=0,n]{α**(n-k)}  (2.14)
+   Specifically, changing the variable of summation in eq.(2.14) from k to
+   r = n - k, we have
+   y[n] = ∑[r=0,n]{α**r} = (1 - α**(n+1)) / (1 - α)
+
+3. For 4 < n ≤ 6, 
+   x[k]h[n-k] = { α**(n-k), 0 ≤ k ≤ 4
+                { 0,        otherwise
+   Thus, in this interval,
+   y[n] = ∑[k=0,4]{α**(n-k)}  (2.15)
+   y[n] = (α**n)∑[k=0,4]{(α**-1)**k} = (α**n)((1 - α(-1)**5)/(1 - α**(-1)))
+        = (α**(n-4) - α**(n+1))/(1-α)  (2.16)
+
+4. For 6 < n but n-6 ≤ 4 (6 < n ≤ 10)
+   x[k]h[n-k] = { α**(n-k), n-6 ≤ k ≤ 4
+                { 0,        otherwise
+   so that,
+   y[n] = ∑[k=n-6,4]{α**(n-k)}
+   Letting r = k - n + 6, we obtain
+   y[n] = ∑[r=0,10-n]{α**(6-r)} = (α**6)∑[r=0,10-n]{(α**(-1))**r}
+        = (α**(n-4) - α**7) / (1 - α)
+
+5. For n - 6 > 4, there is no overlap between the nonzero portions of x[k]
+   and h[n-k], and hence y[n] = 0.
+
+Example 2.5
+Consider an LTI system with input x[n] and unit impulse response h[n] specified as follows:
+x[n] = (2**n)u[-n]  (2.17)
+h[n] = u[n]  (2.18)
+
+
+2.2 CONTINUOUS-TIME LTI SYSTEMS: THE CONVOLUTION INTEGRAL
+
+2.2.1 The Representation of Continuous-Time Signals in Terms of Impulses
+
+To develop the continuous-time counterpart of the discrete-time sifting property in eq.(2.2), we begin by considering a pulse or 'staircase' approximation, x^(t), to a continuous-time signal x(t). This approximation can be expressed as a linear combination of delayed pulses, 
+
+
+
+
