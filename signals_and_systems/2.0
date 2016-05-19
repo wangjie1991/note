@@ -1,0 +1,8 @@
+                    Chapter 2  Linear Time-Invariant Systems
+
+2.0 INTRODUCTION
+
+Linearity and Time Invariance, play a fundamental role in signal and system analysis for two major reasons.
+First, many physical processes possess(拥有) these properites and thus can be modeled as linear time-invariant(LTI) systems.
+In addition, LTI systems can be analyzed in considerable detail, providing both insight into their properties and a set of powerful tools that form the core of signal and system analysis.
+

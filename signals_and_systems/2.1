@@ -3,6 +3,37 @@
 2.1 DISCRETE-TIME LTI SYSTEMS: THE CONVOLUTION SUM
 
 2.1.1 The representation of Discrete-Time Signals in Terms of Impulses
+The key idea in visualizing how the discrete-time unit impulse can be used to construct any discrete-time signal is to think of a discrete-time signal as a sequence of individual impulses.
+
+In generally, by including additional shifted, scaled impulses, we can get
+         x[n] = ... + x[-1]δ[n+1] + x[0]δ[n] + x[1]δ[n-1] + ...  (2.1)
+For any value of n, only one of the terms on the right-hand side of eq.(2.1) is nonzero, and the scaling associated with that term is precisely x[n].
+
+In more compact form, we have
+                      x[n] = ∑[k=-∞,+∞]{x[k]δ[n-k]}  (2.2)
+This corresponds to the representation of an arbitrary sequence as a linear combination of shifted unit impulses δ[n-k], where the weights in this linear combination are x[k].
+Equation(2.2) is called the |sifting property|(筛选性质) of the discrete-time unit impulse. Because the sequence δ[n-k] is nonzero only when k = n, the summation on the right-hand side of eq.(2.2) "sifts" through the sequence of values x[k] and preserves only the value corresponding to k = n.
+
+As an example, consider x[n]=u[n], the unit step. In this case, eq.(2.2) becomes
+                            u[n] = ∑[k=0,+∞]{δ[n-k]}
+
+
+2.1.2 The Discrete-Time Unit Impulse Response and the Convolution-Sum 
+      Representation of LTI Systems
+The response of a linear system to x[n] will be the superposition(叠加) of the scaled responses of the system to each of these shifted impulses. The property of time invariance tells us that the responses of a time-invariant system to the time-shifted unit impulses are simply time-shifted versions of one another.
+
+Consider the response of a linear system to an arbitrary input x[n]. Let h[k][n] denote the response of the linear system to the shifted unit impulse δ[n-k]. Then the response y[n] of the linear system to the input x[n] in eq.(2.2) is simply the weighted linear combination of these basic responses.
+                     y[n] = ∑[k=-∞,+∞]{x[k]h[k][n]}  (2.3)
+
+In general, the responses h[k][n] need not be related to each other for different value of k. However, if the linear system is also time invariant, then these responses to time-shifted unit impulses are all time-shifted versions of each other. Since δ[n-k] is a time-shifted version of δ[n], the response h[k][n] is a time-shifted version of h[0][n].
+                           h[k][n] = h[0][n-k]  (2.4)
+For notational convenience, we define the unit impulse response
+                             h[n] = h[0][n]  (2.5)
+Then for an LTI system
+                      y[n] = ∑[k=-∞,+∞]{x[k]h[n-k]}  (2.6)
+The eq.(2.6) is referred to as the convolution sum or superposition sum. The operation on the right-hand side of eq.(2.6) is known as the convolution of the sequences x[n] and h[n]. We will represent the operation of convolution as
+                           y[n] = x[n] * h[n]  (2.7)
+We see that an LTI system is completely characterized by its response to the unit response.
 
 
 Example 2.4
@@ -47,14 +78,5 @@ Example 2.5
 Consider an LTI system with input x[n] and unit impulse response h[n] specified as follows:
 x[n] = (2**n)u[-n]  (2.17)
 h[n] = u[n]  (2.18)
-
-
-2.2 CONTINUOUS-TIME LTI SYSTEMS: THE CONVOLUTION INTEGRAL
-
-2.2.1 The Representation of Continuous-Time Signals in Terms of Impulses
-
-To develop the continuous-time counterpart of the discrete-time sifting property in eq.(2.2), we begin by considering a pulse or 'staircase' approximation, x^(t), to a continuous-time signal x(t). This approximation can be expressed as a linear combination of delayed pulses, 
-
-
 
 

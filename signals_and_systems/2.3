@@ -1,0 +1,33 @@
+                    Chapter 2  Linear Time-Invariant Systems
+
+2.3 PROPERTIES OF LINEAR TIME-INVARIANT SYSTEMS
+
+The representations of continuous-time and discrete-time LTI systems in terms of their unit impulse responses in the form of convolution sum and convolution integral.
+              y[n] = ∑[k=-∞,+∞]{x[k]h[n-k]} = x[n] * h[n]  (2.39)
+              y(t) = ∫[-∞,+∞]{x(τ)h(t-τ)}dτ = x(t) * h(t)  (2.40)
+One consequence of these representations is that the characteristics of an LTI system are completely determined by its impulse response.
+
+
+2.3.1 The Commutative(交换) Property
+A basic propert of convolution in both continuous and discrete time is that it is a commutative operation. That is
+           x[n] * h[n] = h[n] * x[n] = ∑[k=-∞,+∞]{h[k]x[n-k]}  (2.43)
+           x(t) * h(t) = h(t) * x(t) = ∫[-∞,+∞]{h(τ)x(t-τ)}dτ  (2.44)
+
+These expression can be verified in a manner by a substitution of variables. For example, in the discrete-time case, if r = n - k, then
+x[n] * h[n] = ∑[k=-∞,+∞]{x[k]h[n-k]} = ∑[r=-∞,+∞]{x[n-r]h[r]} = h[n] * x[n](2.45)
+According to eq.(2.45), the output of an LTI system with input x[n] and unit impulse response h[n] is identical to the output of an LTI system with input h[n] and unit impulse response x[n].
+The output of an LTI system with input x(t) and unit impulse response h(t) is identical to the output of an LTI system with input h(t) and unit impulse response x(t).
+
+
+2.3.2 The Distributive Property
+Another basic property of convolution is the distributive property.
+x[n] * (h1[n] + h2[n]) = x[n] * h1[n] + x[n] * h2[n]  (2.46)
+x(t) * (h1(t) + h2(t)) = x(t) * h1(t) + x(t) * h2(t)  (2.47)
+
+verify:
+x[n] * (h1[n] + h2[n]) = ∑[k=-∞,+∞]{x[k](h1[n-k] + h2[n-k])}
+                       = ∑[k=-∞,+∞]{x[k]h1[n-k] + x[k]h2[n-k]}
+                       = ∑[k=-∞,+∞]{x[k]h1[n-k]} + ∑[k=-∞,+∞]{x[k]h2[n-k]}
+                       = x[n] * h1[n] + x[n] * h2[n]
+
+

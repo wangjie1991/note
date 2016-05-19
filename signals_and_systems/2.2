@@ -3,12 +3,40 @@
 2.2 CONTINUOUS-TIME LTI SYSTEMS: THE CONVOLUTION INTEGRAL
 
 2.2.1 The Representation of Continuous-Time Signals in Terms of Impulses
-To develop the continuous-time counterpart of the discrete-time sifting property in eq.(2.2), we begin by considering a pulse or 'staircase' approximation, x^(t), to a continuous-time signal x(t). This approximation can be expressed as a linear combination of delayed pulses. If we define
+To develop the continuous-time counterpart(匹配) of the discrete-time |sifting property|(筛选性质) in eq.(2.2), we begin by considering a pulse or 'staircase' approximation, x^(t), to a continuous-time signal x(t). This approximation can be expressed as a linear combination of delayed pulses. If we define
                       δ[∆](t) = { 1/∆, 0 ≤ t < ∆  (2.24)
                                 { 0,   otherwise
 Since Δδ[Δ](t) has unit amplitude, we have the expression
                  x^(t) = ∑[k=-∞,∞]{x(k∆)(δ[∆](t-k∆))∆}  (2.25)
+For any value of t, only one term in the summation on the right-hand side of eq.(2.25) is nonzero.
 
-p118
+As we let ∆ approach 0, the approximation x^(t) in the limit equals x(t).
+             x(t) = lim[∆->0]∑[k=-∞,∞]{x(k∆)(δ[∆](t-k∆))∆}  (2.26)
+Also, as ∆->0, the summation in eq.(2.26) approaches an integral.
+
+Interpretation:  (refer the graphical example in the book)
+Here, we have the signals x(τ),δ[∆](t-τ). We also have a shaded region whose area approaches the area under x(τ)δ[∆](t-τ) as ∆->0.
+Note that the shaded region has an area equal to x(m∆) where t-∆ < m∆ < t.
+For this value of t, only the term with k = m is nonzero in the summation in eq.(2.26), so the right-hand side of this equation also equals x(m∆). 
+Consequently, x(t) equals the limit as ∆-> 0 of the area under x(τ)δ[∆](t-τ).
+Moreover, from eq.(1.74), we know that the limit as ∆->0 of δ[∆](t) is the unit impulse function δ(t).
+Consequently,
+                     x(t) = ∫[-∞,+∞]{x(τ)δ(t-τ)}dτ  (2.27)
+As in discrete time, we refer to eq.(2.27) as the |sifting property| of the continuous-time impulse.
+
+For the example of x(t) = u(t), eq.(2.27) becomes
+            u(t) = ∫[-∞,+∞]{u(τ)δ(t-τ)}dτ = ∫[0,∞]{δ(t-τ)}dτ  (2.28)
+
+Note that we could have derived eq.(2.27) directly by using several of the basic properties of the unit impulse that we derived in Section 1.4.2.
+Specifically, the signal δ(t-τ) (viewed as a function of τ with t fixed) is a unit impulse located at τ = t.
+Thus, the signal x(τ)δ(t-τ) (once again viewed as a function of τ) equals x(t)δ(t-τ).
+Consequently, the integral of this signal from τ = -∞ to τ = +∞ equals x(t).
+∫[-∞,+∞]{x(τ)δ(t-τ)}dτ = ∫[-∞,+∞]{x(t)δ(t-τ)}dτ = x(t)∫[-∞,+∞]{δ(t-τ)}dτ = x(t).
+
+
+2.2.2 The Continuous-Time Unit Impulse Response and the Convolution Integral 
+      Representation of LTI Systems
+Specifically, let us define h^[k∆](t) as the response of an LTI system to the input δ[∆](t-k∆). Then from eq.(2.25) and the superposition property, we see that
+                  y^(t) = ∑[k=-∞,+∞]{x[k∆]h^[k∆](t)∆}  (2.29)
 
 
